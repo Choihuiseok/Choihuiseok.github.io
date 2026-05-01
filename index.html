@@ -1,25 +1,266 @@
-<div class="card">
-    <div class="info-grid">
-        <div class="info-item">
-            <span>University</span>
-            <strong>전남대학교</strong>
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>최희석 | Data-Driven Planner Portfolio</title>
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --dark-navy: #1e293b;
+            --light-bg: #f8fafc;
+            --text-main: #334155;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: 'Pretendard', -apple-system, sans-serif; 
+            line-height: 1.7; 
+            color: var(--text-main); 
+            background-color: var(--light-bg); 
+            max-width: 1000px; 
+            margin: 0 auto; 
+            padding: 0 20px;
+        }
+
+        /* 헤더 & 프로필 영역 */
+        header { 
+            background: linear-gradient(135deg, var(--dark-navy) 0%, #334155 100%);
+            color: white; 
+            padding: 100px 50px; 
+            border-radius: 0 0 40px 40px;
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+            margin-bottom: 60px;
+        }
+
+        .profile-img-container {
+            flex-shrink: 0;
+            width: 220px;
+            height: 220px;
+            border-radius: 50%;
+            border: 5px solid rgba(255, 255, 255, 0.2);
+            overflow: hidden;
+            background-color: #e2e8f0;
+        }
+
+        .profile-img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .header-content h1 { font-size: 2.8rem; font-weight: 800; margin-bottom: 15px; letter-spacing: -1px; }
+        .header-content p.tagline { font-size: 1.3rem; font-weight: 500; color: #93c5fd; margin-bottom: 20px; }
+        .header-content p.mission { font-size: 1.1rem; opacity: 0.9; line-height: 1.6; word-break: keep-all; }
+
+        /* 섹션 공통 스타일 */
+        section { margin-bottom: 80px; }
+        h2 { 
+            font-size: 1.8rem; 
+            color: var(--dark-navy); 
+            margin-bottom: 30px; 
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        h2::after { content: ""; flex: 1; height: 2px; background: #e2e8f0; }
+
+        /* About Me 카드 스타일 */
+        .card {
+            background: white;
+            border-radius: 24px;
+            padding: 40px;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05), 0 2px 4px -1px rgba(0,0,0,0.06);
+            border: 1px solid #f1f5f9;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .info-item {
+            padding: 15px;
+            background: #f1f5f9;
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        .info-item span { display: block; font-size: 0.9rem; color: #64748b; margin-bottom: 5px; }
+        .info-item strong { font-size: 1.1rem; color: var(--dark-navy); }
+
+        .info-list { margin-top: 25px; list-style: none; }
+        .info-list li { 
+            margin-bottom: 12px; 
+            font-size: 1.05rem; 
+            padding-left: 30px; 
+            position: relative;
+        }
+        .info-list li::before { content: "📍"; position: absolute; left: 0; }
+
+        /* 프로젝트 리스트 */
+        .project-list { display: flex; flex-direction: column; gap: 30px; }
+        .project-card { transition: transform 0.3s ease; }
+        .project-card:hover { transform: translateY(-8px); }
+        
+        .role-badge {
+            background: var(--primary-color);
+            color: white;
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+
+        .project-title { font-size: 1.6rem; color: var(--dark-navy); margin-bottom: 10px; }
+        .project-subtitle { font-size: 1.1rem; color: #64748b; font-weight: 600; margin-bottom: 20px; }
+        .project-details { list-style: none; }
+        .project-details li { 
+            margin-bottom: 12px; 
+            padding-left: 25px; 
+            position: relative;
+            font-size: 0.95rem;
+        }
+        .project-details li::before { 
+            content: "→"; 
+            position: absolute; 
+            left: 0; 
+            color: var(--primary-color); 
+            font-weight: 900; 
+        }
+
+        .accent { color: var(--primary-color); font-weight: 700; }
+        .highlight { color: #93c5fd; font-weight: 700; }
+
+        footer { text-align: center; padding: 60px 0; color: #94a3b8; border-top: 1px solid #e2e8f0; }
+
+        @media (max-width: 850px) {
+            header { flex-direction: column; text-align: center; padding: 60px 30px; }
+            .profile-img-container { width: 180px; height: 180px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="profile-img-container">
+            <img src="profile.jpg" alt="최희석 프로필 사진">
         </div>
-        <div class="info-item">
-            <span>Major</span>
-            <strong>빅데이터융합학과 4학년</strong>
+        <div class="header-content">
+            <p class="tagline">Data-Driven Creative Planner</p>
+            <h1>최희석</h1>
+            <p class="mission">
+                "데이터를 통해 문제를 정의하고, <span class="highlight">창의적인 기획</span>으로 해결책을 제시합니다. 
+                분석 역량을 비즈니스 가치로 전환하는 <span class="highlight">PM / 서비스 기획자</span>를 지향합니다."
+            </p>
         </div>
-        <div class="info-item">
-            <span>Birth</span>
-            <strong>2001. 04. 23</strong>
+    </header>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <div class="card">
+            <div class="info-grid">
+                <div class="info-item">
+                    <span>University</span>
+                    <strong>전남대학교</strong>
+                </div>
+                <div class="info-item">
+                    <span>Major</span>
+                    <strong>빅데이터융합학과 4학년</strong>
+                </div>
+                <div class="info-item">
+                    <span>Birth</span>
+                    <strong>2001. 04. 23</strong>
+                </div>
+                <div class="info-item">
+                    <span>Focus</span>
+                    <strong>Service Planning & PM</strong>
+                </div>
+            </div>
+            
+            <ul class="info-list">
+                <li>전남대학교 빅데이터융합학과 4학년 재학 (2021.03 ~ 2027.02 예정)</li>
+                <li>전남대학교 의료생명정보학 연구실 학부연구생 (2025.05 ~ 2026.04)</li>
+            </ul>
         </div>
-        <div class="info-item">
-            <span>Identity</span>
-            <strong>Service Planning & PM</strong> <!-- 여기를 수정! -->
+    </section>
+
+    <section id="projects">
+        <h2>Major Projects</h2>
+        <div class="project-list">
+            
+            <!-- SanmanTEC -->
+            <div class="card project-card">
+                <span class="role-badge">Founder & PM</span>
+                <h3 class="project-title">SanmanTEC (창업동아리)</h3>
+                <p class="project-subtitle">"디지털 자산의 안전한 승계: 암호화폐 상속 서비스 기획"</p>
+                <ul class="project-details">
+                    <li><strong>비즈니스 모델:</strong> 비수탁형(Non-custodial) 모델을 활용한 보안 기반 암호화폐 상속 서비스 기획</li>
+                    <li><strong>기획 및 리딩:</strong> 6인 규모 팀의 리더로서 사업계획서 고도화 및 R&R 매니지먼트 총괄</li>
+                    <li><strong>창의적 기획:</strong> 기술적 복잡성을 사용자 친화적 서비스 시나리오로 전환하는 기획 프로세스 수행</li>
+                </ul>
+            </div>
+
+            <!-- 건강 MBTI -->
+            <div class="card project-card">
+                <span class="role-badge">Data Analyst & Planner</span>
+                <h3 class="project-title">전 국민 건강 행태 기반 '건강 MBTI' 모델링</h3>
+                <p class="project-subtitle">"데이터 기반의 맞춤형 건강 생활습관 큐레이션"</p>
+                <ul class="project-details">
+                    <li><strong>데이터 활용:</strong> 국민건강영양조사(KNHANES) 데이터를 분석하여 핵심 건강 지표 추출</li>
+                    <li><strong>아이템 기획:</strong> 분석 결과를 16가지 유형의 '건강 MBTI'로 분류하고 맞춤형 생활습관 가이드 제시</li>
+                    <li><strong>성과:</strong> <span class="accent">2025 호남지방통계청 통계분석 경진대회 최우수상 (1위)</span></li>
+                </ul>
+            </div>
+
+            <!-- ECMO 분석 -->
+            <div class="card project-card">
+                <span class="role-badge">Undergraduate Researcher</span>
+                <h3 class="project-title">청소년 ECMO 환자의 신경합병증 발생 요인 분석</h3>
+                <p class="project-subtitle">"건강보험공단 대규모 데이터를 활용한 임상 통계 분석"</p>
+                <ul class="project-details">
+                    <li><strong>데이터 분석:</strong> 20세 이하 ECMO 환자 대상 신경합병증 발생군/미발생군 기초 통계 분석</li>
+                    <li><strong>고급 통계:</strong> Cox 비례위험 모형 분석을 통한 합병증 발생 위험 요인 및 예후 규명</li>
+                </ul>
+            </div>
+
+            <!-- K리그 캡스톤 -->
+            <div class="card project-card">
+                <span class="role-badge">Data Planner</span>
+                <h3 class="project-title">K리그 대중 심리와 경기력 상관관계 분석</h3>
+                <p class="project-subtitle">"유튜브 여론 데이터를 활용한 소셜 데이터 융합 분석"</p>
+                <ul class="project-details">
+                    <li>유튜브 댓글 데이터(비정형)와 실제 경기 지표(정형)를 결합한 데이터 프레임워크 설계</li>
+                    <li>팬덤의 심리 지표가 실제 팀의 성과에 미치는 영향력을 통계적으로 증명</li>
+                </ul>
+            </div>
+
         </div>
-    </div>
-    <!-- 아래 리스트 부분도 기간을 명시해 수정하세요 -->
-    <ul class="info-list" style="margin-top: 25px; list-style: none;">
-        <li style="margin-bottom: 10px;">📍 전남대학교 빅데이터융합학과 4학년 재학 (2021.03 ~ 2027.02 예정)</li>
-        <li>📍 전남대학교 의료생명정보학 연구실 학부연구생 (2025.04 ~ 2026.04)</li>
-    </ul>
-</div>
+    </section>
+
+    <section id="awards">
+        <h2>Honors & Awards</h2>
+        <div class="card" style="border-left: 8px solid #f1c40f;">
+            <ul style="list-style: none;">
+                <li style="margin-bottom: 12px;">🏆 <strong>2025 호남지방통계청 통계분석 경진대회 최우수상 (1위)</strong></li>
+                <li style="margin-bottom: 12px;">🏆 <strong>2025 J-Curve Startup 부트캠프 최우수상 (1위)</strong></li>
+                <li>🏆 <strong>2025 AICOSS 산학협력프로젝트 경진대회 동상</strong></li>
+            </ul>
+            <p style="margin-top: 15px; font-size: 0.95rem; color: #64748b;">
+                데이터를 통해 문제를 명확히 진단하고, 이를 설득력 있는 비즈니스/분석 모델로 전환하여 얻은 성과입니다.
+            </p>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 Choi Huiseok. Built with Data & Creative Passion.</p>
+    </footer>
+
+</body>
+</html>
