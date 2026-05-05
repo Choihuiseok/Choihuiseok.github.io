@@ -12,6 +12,7 @@
             --soft-gray-bg: #f9fafb; 
             --text-main: #1d2939;
             --card-border: #f2f4f7;
+            --blue-accent: #2563eb;
         }
 
         * { 
@@ -21,25 +22,25 @@
         }
 
         body { 
-            font-family: 'Pretendard', -apple-system, sans-serif; 
+            font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, sans-serif; 
             line-height: 1.7; 
             color: var(--text-main); 
             background-color: var(--soft-gray-bg); 
-            max-width: 1000px; 
+            max-width: 1180px; 
             margin: 0 auto; 
-            padding: 0 20px;
+            padding: 0 24px;
         }
 
         header { 
             background: var(--midnight-navy);
             color: white; 
-            padding: 100px 50px; 
-            border-radius: 0 0 40px 40px;
+            padding: 100px 56px; 
+            border-radius: 0 0 42px 42px;
             display: flex;
             align-items: center;
-            gap: 50px;
+            gap: 52px;
             box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-            margin-bottom: 60px;
+            margin-bottom: 64px;
             border-top: 10px solid var(--kakao-yellow); 
         }
 
@@ -59,7 +60,7 @@
         }
 
         .header-content h1 { 
-            font-size: 2.8rem; 
+            font-size: 2.9rem; 
             font-weight: 800; 
             margin-bottom: 15px; 
             letter-spacing: -1px; 
@@ -67,24 +68,24 @@
 
         .header-content p.tagline { 
             font-size: 1.3rem; 
-            font-weight: 600; 
+            font-weight: 700; 
             color: var(--kakao-yellow); 
             margin-bottom: 20px; 
         }
 
         .header-content p.mission { 
             font-size: 1.1rem; 
-            opacity: 0.85; 
-            line-height: 1.6; 
+            opacity: 0.88; 
+            line-height: 1.65; 
             word-break: keep-all; 
         }
 
         section { 
-            margin-bottom: 80px; 
+            margin-bottom: 82px; 
         }
 
         h2 { 
-            font-size: 1.8rem; 
+            font-size: 1.9rem; 
             color: var(--midnight-navy); 
             margin-bottom: 30px; 
             display: flex;
@@ -95,7 +96,7 @@
         h2::before { 
             content: ""; 
             width: 8px; 
-            height: 32px; 
+            height: 34px; 
             background: var(--kakao-yellow); 
             border-radius: 4px; 
         }
@@ -117,12 +118,12 @@
 
         .info-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
             gap: 20px;
         }
 
         .info-item {
-            padding: 15px;
+            padding: 16px;
             background: #fcfcfd;
             border-radius: 16px;
             text-align: center;
@@ -137,7 +138,7 @@
         }
 
         .info-item strong { 
-            font-size: 1.1rem; 
+            font-size: 1.08rem; 
             color: var(--midnight-navy); 
         }
 
@@ -151,6 +152,7 @@
             font-size: 1.05rem; 
             padding-left: 30px; 
             position: relative;
+            word-break: keep-all;
         }
 
         .info-list li::before { 
@@ -170,7 +172,7 @@
         }
 
         .project-card:hover { 
-            transform: translateY(-8px); 
+            transform: translateY(-6px); 
             box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05); 
         }
         
@@ -186,16 +188,18 @@
         }
 
         .project-title { 
-            font-size: 1.6rem; 
+            font-size: 1.65rem; 
             color: var(--midnight-navy); 
             margin-bottom: 10px; 
+            letter-spacing: -0.5px;
         }
 
         .project-subtitle { 
             font-size: 1.1rem; 
             color: #475467; 
-            font-weight: 600; 
+            font-weight: 650; 
             margin-bottom: 20px; 
+            word-break: keep-all;
         }
 
         .project-details { 
@@ -206,7 +210,7 @@
             margin-bottom: 12px; 
             padding-left: 25px; 
             position: relative;
-            font-size: 0.95rem;
+            font-size: 0.96rem;
             word-break: keep-all;
         }
 
@@ -224,13 +228,13 @@
         }
 
         .detail-button {
-            margin-top: 22px;
-            padding: 13px 22px;
+            margin-top: 24px;
+            padding: 14px 24px;
             border: none;
             border-radius: 14px;
             background: var(--midnight-navy);
             color: white;
-            font-size: 0.95rem;
+            font-size: 0.96rem;
             font-weight: 800;
             cursor: pointer;
             transition: all 0.25s ease;
@@ -243,7 +247,7 @@
 
         /* ===== Project Slide Detail Section ===== */
         .project-slide-section {
-            margin-top: 35px;
+            margin-top: 32px;
             display: none;
         }
 
@@ -253,34 +257,16 @@
 
         .portfolio-slide {
             background: #ffffff;
-            border-radius: 28px;
+            border-radius: 32px;
             border: 1px solid #eaecf0;
-            box-shadow: 0 20px 45px rgba(16, 24, 40, 0.08);
-            padding: 42px;
-            aspect-ratio: 16 / 9;
-            min-height: 560px;
-            display: grid;
-            grid-template-columns: 1.05fr 1fr;
-            gap: 34px;
-            position: relative;
-            overflow: hidden;
+            border-top: 12px solid var(--kakao-yellow);
+            box-shadow: 0 28px 55px rgba(16, 24, 40, 0.11);
+            padding: 46px 48px;
+            min-height: 820px;
         }
 
-        .portfolio-slide::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 10px;
-            background: var(--kakao-yellow);
-        }
-
-        .slide-left {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            gap: 24px;
+        .slide-header {
+            margin-bottom: 34px;
         }
 
         .slide-kicker {
@@ -288,125 +274,112 @@
             width: fit-content;
             background: var(--midnight-navy);
             color: var(--kakao-yellow);
-            font-size: 0.8rem;
-            font-weight: 800;
-            padding: 7px 16px;
+            font-size: 0.82rem;
+            font-weight: 900;
+            padding: 8px 18px;
             border-radius: 999px;
-            margin-bottom: 16px;
+            margin-bottom: 18px;
+            letter-spacing: -0.2px;
         }
 
         .slide-title {
-            font-size: 2.1rem;
+            font-size: 2.25rem;
             line-height: 1.25;
             color: var(--midnight-navy);
-            letter-spacing: -1px;
+            letter-spacing: -1.2px;
             margin-bottom: 12px;
         }
 
         .slide-subtitle {
-            font-size: 1.05rem;
-            font-weight: 600;
+            max-width: 920px;
+            font-size: 1.06rem;
+            font-weight: 650;
             color: #475467;
+            line-height: 1.65;
             word-break: keep-all;
         }
 
-        .slide-summary-box {
+        .slide-image-row {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+            margin-bottom: 28px;
+        }
+
+        .slide-image-card {
             background: #f9fafb;
             border: 1px solid #eaecf0;
-            border-radius: 22px;
-            padding: 24px;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 8px 18px rgba(16, 24, 40, 0.05);
         }
 
-        .slide-summary-box h4,
-        .slide-role-box h4,
-        .slide-files h4 {
-            font-size: 1rem;
+        .slide-image-card img {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            object-position: center;
+            display: block;
+            background: #f2f4f7;
+        }
+
+        .slide-image-card p {
+            padding: 14px 16px;
+            font-size: 0.96rem;
+            font-weight: 850;
             color: var(--midnight-navy);
-            margin-bottom: 12px;
+            text-align: center;
+            background: white;
+            border-top: 1px solid #eaecf0;
         }
 
-        .slide-summary-box ul,
+        .slide-bottom-grid {
+            display: grid;
+            grid-template-columns: 1.45fr 1fr;
+            gap: 24px;
+        }
+
+        .slide-role-box,
+        .slide-files-box {
+            background: #fcfcfd;
+            border: 1px solid #eaecf0;
+            border-radius: 24px;
+            padding: 26px;
+        }
+
+        .slide-role-box h4,
+        .slide-files-box h4 {
+            font-size: 1.08rem;
+            color: var(--midnight-navy);
+            margin-bottom: 14px;
+        }
+
         .slide-role-box ul {
             list-style: none;
         }
 
-        .slide-summary-box li,
         .slide-role-box li {
             position: relative;
             padding-left: 20px;
-            margin-bottom: 9px;
-            font-size: 0.92rem;
-            line-height: 1.55;
+            margin-bottom: 10px;
+            font-size: 0.96rem;
+            line-height: 1.58;
             color: #344054;
             word-break: keep-all;
         }
 
-        .slide-summary-box li::before,
         .slide-role-box li::before {
             content: "•";
             position: absolute;
             left: 0;
-            color: var(--midnight-navy);
+            color: var(--blue-accent);
             font-weight: 900;
-        }
-
-        .slide-role-box {
-            background: var(--midnight-navy);
-            color: white;
-            border-radius: 22px;
-            padding: 24px;
-        }
-
-        .slide-role-box h4 {
-            color: var(--kakao-yellow);
-        }
-
-        .slide-role-box li {
-            color: rgba(255, 255, 255, 0.9);
-        }
-
-        .slide-role-box li::before {
-            color: var(--kakao-yellow);
-        }
-
-        .slide-right {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-
-        .slide-image-grid {
-            display: grid;
-            grid-template-columns: 1.2fr 0.8fr;
-            grid-template-rows: 1fr 1fr;
-            gap: 14px;
-            height: 330px;
-        }
-
-        .slide-image-grid img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 20px;
-            border: 1px solid #eaecf0;
-            background: #f2f4f7;
-        }
-
-        .slide-image-grid img:first-child {
-            grid-row: 1 / 3;
-        }
-
-        .slide-files {
-            background: #fcfcfd;
-            border: 1px solid #eaecf0;
-            border-radius: 22px;
-            padding: 22px;
         }
 
         .file-button-wrap {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 10px;
+            grid-template-columns: 1fr;
+            gap: 12px;
         }
 
         .file-button {
@@ -415,24 +388,25 @@
             background: white;
             color: var(--midnight-navy);
             border: 1px solid #d0d5dd;
-            border-radius: 14px;
-            padding: 14px 10px;
-            font-size: 0.88rem;
-            font-weight: 800;
+            border-radius: 16px;
+            padding: 15px 12px;
+            font-size: 0.96rem;
+            font-weight: 850;
             transition: all 0.25s ease;
         }
 
         .file-button:hover {
             background: var(--midnight-navy);
             color: white;
-            transform: translateY(-3px);
+            transform: translateY(-2px);
         }
 
         .slide-note {
-            font-size: 0.8rem;
+            margin-top: 14px;
+            font-size: 0.82rem;
+            line-height: 1.55;
             color: #667085;
-            margin-top: 12px;
-            line-height: 1.5;
+            word-break: keep-all;
         }
 
         footer { 
@@ -442,34 +416,30 @@
             border-top: 1px solid #eaecf0; 
         }
 
-        @media (max-width: 900px) {
+        @media (max-width: 1000px) {
             .portfolio-slide {
-                aspect-ratio: auto;
-                grid-template-columns: 1fr;
+                padding: 36px 30px;
                 min-height: auto;
-                padding: 30px;
             }
 
-            .slide-image-grid {
-                height: auto;
+            .slide-image-row {
                 grid-template-columns: 1fr;
-                grid-template-rows: auto;
             }
 
-            .slide-image-grid img {
-                height: 220px;
+            .slide-image-card img {
+                height: 360px;
             }
 
-            .slide-image-grid img:first-child {
-                grid-row: auto;
-            }
-
-            .file-button-wrap {
+            .slide-bottom-grid {
                 grid-template-columns: 1fr;
             }
         }
 
         @media (max-width: 850px) {
+            body {
+                padding: 0 18px;
+            }
+
             header { 
                 flex-direction: column; 
                 text-align: center; 
@@ -479,6 +449,14 @@
             .profile-img-container { 
                 width: 180px; 
                 height: 180px; 
+            }
+
+            .slide-title {
+                font-size: 1.8rem;
+            }
+
+            .slide-image-card img {
+                height: 260px;
             }
         }
     </style>
@@ -490,6 +468,7 @@
         <div class="profile-img-container">
             <img src="증명사진.jpg" alt="최희석 프로필 사진">
         </div>
+
         <div class="header-content">
             <p class="tagline">Data-Driven Service Planner</p>
             <h1>최희석</h1>
@@ -501,20 +480,24 @@
 
     <section id="about">
         <h2>About Me</h2>
+
         <div class="card">
             <div class="info-grid">
                 <div class="info-item">
                     <span>University</span>
                     <strong>전남대학교</strong>
                 </div>
+
                 <div class="info-item">
                     <span>Major</span>
                     <strong>빅데이터융합학과 4학년</strong>
                 </div>
+
                 <div class="info-item">
                     <span>Birth</span>
                     <strong>2001. 04. 23</strong>
                 </div>
+
                 <div class="info-item">
                     <span>Focus</span>
                     <strong>Service Planning & PM</strong>
@@ -530,19 +513,22 @@
 
     <section id="tech">
         <h2>Skills & Tools</h2>
+
         <div class="card">
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 25px;">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 25px;">
                 <div>
                     <h4 style="color: var(--midnight-navy); margin-bottom: 10px; border-bottom: 3px solid var(--kakao-yellow); display: inline-block;">Data Analysis</h4>
-                    <p style="font-size: 0.95rem;">Python, R, SQL, SAS</p>
+                    <p style="font-size: 0.96rem;">Python, R, SQL, SAS</p>
                 </div>
+
                 <div>
                     <h4 style="color: var(--midnight-navy); margin-bottom: 10px; border-bottom: 3px solid var(--kakao-yellow); display: inline-block;">Data Experience</h4>
-                    <p style="font-size: 0.95rem;">NHIS(건강보험공단), KNHANES(국민건강영양조사)</p>
+                    <p style="font-size: 0.96rem;">NHIS(건강보험공단), KNHANES(국민건강영양조사)</p>
                 </div>
+
                 <div>
                     <h4 style="color: var(--midnight-navy); margin-bottom: 10px; border-bottom: 3px solid var(--kakao-yellow); display: inline-block;">PM Tools</h4>
-                    <p style="font-size: 0.95rem;">Notion, Figma, Google Docs, GitHub</p>
+                    <p style="font-size: 0.96rem;">Notion, Figma, Google Docs, GitHub</p>
                 </div>
             </div>
         </div>
@@ -556,8 +542,12 @@
             <!-- Project 01: SanmanTEC -->
             <div class="card project-card">
                 <span class="role-badge">Founder & Project Lead</span>
+
                 <h3 class="project-title">SanmanTEC (창업동아리)</h3>
-                <p class="project-subtitle">"디지털 자산의 안전한 승계: 암호화폐 상속 서비스 기획"</p>
+
+                <p class="project-subtitle">
+                    "디지털 자산의 안전한 승계: 암호화폐 상속 서비스 기획"
+                </p>
 
                 <ul class="project-details">
                     <li><strong>비즈니스 모델:</strong> 비수탁형(Non-custodial) 모델을 활용한 보안 기반 암호화폐 상속 서비스 기획</li>
@@ -574,63 +564,74 @@
             <!-- SanmanTEC Detail Slide -->
             <div class="project-slide-section" id="sanmantec-slide">
                 <div class="portfolio-slide">
-                    <div class="slide-left">
-                        <div>
-                            <span class="slide-kicker">PROJECT 01 · STARTUP / SERVICE PLANNING</span>
-                            <h3 class="slide-title">SanmanTEC<br>암호화폐 상속 서비스 기획</h3>
-                            <p class="slide-subtitle">
-                                비수탁 지갑 기반의 디지털 자산 승계 서비스를 기획하고,
-                                Ethereum Sepolia 테스트넷에서 MVP 상속 흐름을 검증한 창업 프로젝트입니다.
-                            </p>
+
+                    <div class="slide-header">
+                        <span class="slide-kicker">PROJECT 01 · STARTUP / SERVICE PLANNING</span>
+
+                        <h3 class="slide-title">
+                            SanmanTEC | 암호화폐 상속 서비스 기획
+                        </h3>
+
+                        <p class="slide-subtitle">
+                            비수탁 지갑 기반의 디지털 자산 승계 서비스를 기획하고, MVP 화면·기획 문서·팀 GitHub 저장소를 바탕으로 서비스 구조와 실행 가능성을 구체화한 창업 프로젝트입니다.
+                        </p>
+                    </div>
+
+                    <div class="slide-image-row">
+                        <div class="slide-image-card">
+                            <img src="images/sanmantec-main.png" alt="SanmanTEC MVP 서비스 화면">
+                            <p>MVP 서비스 화면</p>
                         </div>
 
-                        <div class="slide-summary-box">
-                            <h4>Project Output</h4>
-                            <ul>
-                                <li>메타마스크 연동 기반의 상속 금고 생성, 상속인 지정, 자산 관리 화면을 포함한 MVP 서비스 구조 기획</li>
-                                <li>상속 진행 단계, 사용자 화면, 관리자 승인 흐름을 정리한 발표자료 및 기획 문서 제작</li>
-                                <li>팀 GitHub 저장소를 기반으로 프론트엔드, 백엔드, 스마트컨트랙트 개발 구조를 확인하며 요구사항 정리</li>
-                            </ul>
+                        <div class="slide-image-card">
+                            <img src="images/sanmantec-scenario.png" alt="SanmanTEC 상속 진행 시나리오">
+                            <p>상속 진행 시나리오</p>
                         </div>
 
+                        <div class="slide-image-card">
+                            <img src="images/sanmantec-github.png" alt="SanmanTEC 팀 GitHub 저장소">
+                            <p>팀 GitHub 저장소</p>
+                        </div>
+                    </div>
+
+                    <div class="slide-bottom-grid">
                         <div class="slide-role-box">
                             <h4>My Role</h4>
                             <ul>
                                 <li>창업 아이템 발굴 및 전체 서비스 기획 방향 설정</li>
-                                <li>MVP 기능 범위 정의, 사용자 시나리오 및 유즈케이스 흐름 설계</li>
+                                <li>MVP 기능 범위 정의, 사용자 시나리오 및 화면 흐름 설계</li>
                                 <li>사업계획서, 발표자료, 멘토링 자료 작성 및 창업지원사업 지원 준비</li>
-                                <li>프론트엔드, 백엔드, 스마트컨트랙트 개발 파트 간 요구사항 정리 및 기능 우선순위 조율</li>
+                                <li>프론트엔드·백엔드·스마트컨트랙트 개발 파트 간 요구사항 정리 및 기능 우선순위 조율</li>
                             </ul>
                         </div>
-                    </div>
 
-                    <div class="slide-right">
-                        <div class="slide-image-grid">
-                            <img src="images/sanmantec-main.png" alt="SanmanTEC MVP 서비스 화면">
-                            <img src="images/sanmantec-scenario.png" alt="SanmanTEC 상속 진행 시나리오">
-                            <img src="images/sanmantec-github.png" alt="SanmanTEC 팀 GitHub 저장소">
-                        </div>
-
-                        <div class="slide-files">
+                        <div class="slide-files-box">
                             <h4>Download Materials</h4>
+
                             <div class="file-button-wrap">
-                                <a class="file-button" href="files/sanmantec-business-plan.pdf" download>사업계획서</a>
+                                <a class="file-button" href="files/sanmantec-business-plan-public.pdf" download>사업계획서 요약본</a>
                                 <a class="file-button" href="files/sanmantec-presentation.pdf" download>발표자료</a>
                                 <a class="file-button" href="files/sanmantec-report.pdf" download>최종보고서</a>
                             </div>
+
                             <p class="slide-note">
                                 ※ 공개용 요약본 기준으로 업로드하는 것을 권장합니다. 특허, 팀원 개인정보, 세부 재무계획 등 민감한 내용은 제외하세요.
                             </p>
                         </div>
                     </div>
+
                 </div>
             </div>
 
             <!-- Project 02 -->
             <div class="card project-card">
                 <span class="role-badge">Data Analyst & Planner</span>
+
                 <h3 class="project-title">국민건강영양조사 기반 건강 생활습관 유형화 프로젝트</h3>
-                <p class="project-subtitle">"데이터 기반의 맞춤형 건강 생활습관 큐레이션"</p>
+
+                <p class="project-subtitle">
+                    "데이터 기반의 맞춤형 건강 생활습관 큐레이션"
+                </p>
 
                 <ul class="project-details">
                     <li><strong>데이터 활용:</strong> 국민건강영양조사(KNHANES) 데이터를 분석하여 핵심 건강 지표 추출</li>
@@ -641,8 +642,12 @@
             <!-- Project 03 -->
             <div class="card project-card">
                 <span class="role-badge">Undergraduate Researcher</span>
+
                 <h3 class="project-title">청소년 ECMO 환자의 신경합병증 발생 요인 분석</h3>
-                <p class="project-subtitle">"건강보험공단 대규모 데이터(NHIS Data)를 활용한 임상 통계 분석"</p>
+
+                <p class="project-subtitle">
+                    "건강보험공단 대규모 데이터(NHIS Data)를 활용한 임상 통계 분석"
+                </p>
 
                 <ul class="project-details">
                     <li><strong>데이터 분석:</strong> 20세 이하 ECMO 환자 대상 신경합병증 발생군/미발생군 기초 통계 분석</li>
@@ -653,8 +658,12 @@
             <!-- Project 04 -->
             <div class="card project-card">
                 <span class="role-badge">Data Planner</span>
+
                 <h3 class="project-title">K리그 대중 심리와 경기력 상관관계 분석</h3>
-                <p class="project-subtitle">"유튜브 여론 데이터를 활용한 소셜 데이터 융합 분석"</p>
+
+                <p class="project-subtitle">
+                    "유튜브 여론 데이터를 활용한 소셜 데이터 융합 분석"
+                </p>
 
                 <ul class="project-details">
                     <li>유튜브 댓글 데이터(비정형)와 실제 경기 지표(정형)를 결합한 데이터 프레임워크 설계</li>
