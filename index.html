@@ -753,22 +753,87 @@
     </div>
 </div>
 
-            <!-- Project 03 -->
-            <div class="card project-card">
-                <span class="role-badge">Undergraduate Researcher</span>
+           <!-- Project 03: ECMO / ECLS Neurologic Complication Analysis -->
+<div class="card project-card">
+    <span class="role-badge">Undergraduate Researcher</span>
 
-                <h3 class="project-title">청소년 ECMO 환자의 신경합병증 발생 요인 분석</h3>
+    <h3 class="project-title">청소년 ECLS 환자의 신경합병증 발생 요인 분석</h3>
 
-                <p class="project-subtitle">
-                    "건강보험공단 대규모 데이터(NHIS Data)를 활용한 임상 통계 분석"
-                </p>
+    <p class="project-subtitle">
+        "건강보험공단 대규모 데이터(NHIS)를 활용한 의생명정보학 연구 분석"
+    </p>
 
-                <ul class="project-details">
-                    <li><strong>데이터 분석:</strong> 20세 이하 ECMO 환자 대상 신경합병증 발생군/미발생군 기초 통계 분석</li>
-                    <li><strong>통계 분석:</strong> Cox 비례위험 모형 분석을 통한 합병증 발생 위험 요인 및 예후 규명</li>
+    <ul class="project-details">
+        <li><strong>데이터 기반:</strong> NHIS 자료를 활용해 18세 이하 ECLS 환자 코호트를 구성하고 신경합병증 발생군을 정의</li>
+        <li><strong>분석 내용:</strong> 생존자·사망자 그룹별 기초통계와 Early/Late 신경합병증 발생 특성을 비교</li>
+        <li><strong>분석 방법:</strong> SAS 기반 전처리와 Cox 비례위험 모형을 활용해 사망 및 신경합병증 위험요인 분석</li>
+    </ul>
+
+    <button class="detail-button" onclick="toggleProjectSlide('ecmo-slide', this)">
+        상세정보 보기
+    </button>
+</div>
+
+<!-- ECMO Detail Slide -->
+<div class="project-slide-section" id="ecmo-slide">
+    <div class="portfolio-slide">
+
+        <div class="slide-header">
+            <span class="slide-kicker">PROJECT 03 · MEDICAL DATA / SURVIVAL ANALYSIS</span>
+
+            <h3 class="slide-title">
+                청소년 ECLS 환자의 신경합병증 발생 요인 분석
+            </h3>
+
+            <p class="slide-subtitle">
+                NHIS 자료를 활용해 18세 이하 ECLS 환자 코호트를 구성하고,
+                신경합병증 발생 시점에 따른 예후 차이와 위험요인을 분석한 의생명정보학 연구 프로젝트입니다.
+            </p>
+        </div>
+
+        <div class="slide-image-row">
+            <div class="slide-image-card">
+                <img src="images/ecmo-cohort.png" alt="ECLS 환자 코호트 구성" onclick="openImageModal(this)">
+                <p>연구 대상자 코호트 구성</p>
+            </div>
+
+            <div class="slide-image-card">
+                <img src="images/ecmo-baseline.png" alt="ECLS 생존자 기초통계 비교" onclick="openImageModal(this)">
+                <p>생존자 기초통계 비교</p>
+            </div>
+
+            <div class="slide-image-card">
+                <img src="images/ecmo-cox.png" alt="Cox 비례위험 모형 분석 결과" onclick="openImageModal(this)">
+                <p>Cox 위험요인 분석</p>
+            </div>
+        </div>
+
+        <div class="slide-bottom-grid">
+            <div class="slide-role-box">
+                <h4>My Role</h4>
+                <ul>
+                    <li>NHIS 자료 기반 18세 이하 ECLS 환자 코호트를 구성하고 생존자·사망자 및 신경합병증 발생 시점별 분석군 정의</li>
+                    <li>신경합병증 관련 ICD-10 코드 기준을 정리하고 ECLS 이전 합병증 환자를 제외한 분석 대상자 필터링 수행</li>
+                    <li>SAS를 활용해 생존자·사망자 기초통계, 진단검사, 재활치료, 장기 예후 관련 변수 분석</li>
+                    <li>Cox 비례위험 모형을 활용해 사망 위험 및 신경합병증 발생 위험요인 분석 보조</li>
                 </ul>
             </div>
 
+            <div class="slide-files-box">
+                <h4>Download Materials</h4>
+
+                <div class="file-button-wrap">
+                    <a class="file-button" href="files/ecmo-research-summary.pdf" download>연구 요약본</a>
+                </div>
+
+                <p class="slide-note">
+                    ※ NHIS 원자료 및 세부 분석 코드는 데이터 보안상 공개하지 않습니다. 포트폴리오에는 연구 목적, 분석 흐름, 주요 결과를 정리한 요약본만 제공합니다.
+                </p>
+            </div>
+        </div>
+
+    </div>
+</div>
            <!-- Project 04: K-League Sentiment & Performance Analysis -->
 <div class="card project-card">
     <span class="role-badge">Data Planner</span>
