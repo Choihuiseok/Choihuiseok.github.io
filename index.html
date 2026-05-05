@@ -769,23 +769,88 @@
                 </ul>
             </div>
 
-            <!-- Project 04 -->
-            <div class="card project-card">
-                <span class="role-badge">Data Planner</span>
+           <!-- Project 04: K-League Sentiment & Performance Analysis -->
+<div class="card project-card">
+    <span class="role-badge">Data Planner</span>
 
-                <h3 class="project-title">K리그 대중 심리와 경기력 상관관계 분석</h3>
+    <h3 class="project-title">K리그 팬 여론과 경기력의 상관 구조 분석</h3>
 
-                <p class="project-subtitle">
-                    "유튜브 여론 데이터를 활용한 소셜 데이터 융합 분석"
-                </p>
+    <p class="project-subtitle">
+        "유튜브 댓글 데이터와 경기력 지표를 결합한 스포츠 소셜 데이터 분석"
+    </p>
 
-                <ul class="project-details">
-                    <li>유튜브 댓글 데이터(비정형)와 실제 경기 지표(정형)를 결합한 데이터 프레임워크 설계</li>
-                    <li>팬덤의 심리 지표가 실제 팀의 성과에 미치는 상관관계 분석</li>
+    <ul class="project-details">
+        <li><strong>데이터 수집:</strong> K리그 2024 시즌 일부 구단의 유튜브 하이라이트 댓글과 공식 경기력 데이터를 수집</li>
+        <li><strong>분석 방법:</strong> BERTopic 기반 토픽 모델링, LLM 기반 감정점수화, PCA 기반 경기력 지표 축소를 수행</li>
+        <li><strong>결과 도출:</strong> 팀별 팬 여론 구조와 경기력 지표 간 상관관계를 분석하고, 팀별 팬덤 반응 차이를 해석</li>
+    </ul>
+
+    <button class="detail-button" onclick="toggleProjectSlide('kleague-slide', this)">
+        상세정보 보기
+    </button>
+</div>
+
+<!-- K-League Detail Slide -->
+<div class="project-slide-section" id="kleague-slide">
+    <div class="portfolio-slide">
+
+        <div class="slide-header">
+            <span class="slide-kicker">PROJECT 04 · SPORTS DATA / NLP ANALYSIS</span>
+
+            <h3 class="slide-title">
+                K리그 팬 여론과 경기력의 상관 구조 분석
+            </h3>
+
+            <p class="slide-subtitle">
+                유튜브 댓글 기반 팬 여론 데이터와 K리그 경기력 지표를 결합하여,
+                팬 감정·토픽 구조와 실제 경기력 간의 관계를 탐색한 소셜 데이터 분석 프로젝트입니다.
+            </p>
+        </div>
+
+        <div class="slide-image-row">
+            <div class="slide-image-card">
+                <img src="images/kleague-data.png" alt="K리그 유튜브 댓글 데이터 수집" onclick="openImageModal(this)">
+                <p>유튜브 댓글 데이터 수집</p>
+            </div>
+
+            <div class="slide-image-card">
+                <img src="images/kleague-method.png" alt="BERTopic 기반 토픽 모델링" onclick="openImageModal(this)">
+                <p>BERTopic 기반 토픽 모델링</p>
+            </div>
+
+            <div class="slide-image-card">
+                <img src="images/kleague-result.png" alt="팀별 팬 여론 구조 비교" onclick="openImageModal(this)">
+                <p>팀별 팬 여론 구조 비교</p>
+            </div>
+        </div>
+
+        <div class="slide-bottom-grid">
+            <div class="slide-role-box">
+                <h4>My Role</h4>
+                <ul>
+                    <li>K리그 하이라이트 댓글 데이터와 공식 경기력 지표를 결합한 분석 프레임워크 설계</li>
+                    <li>YouTube 댓글 데이터를 팀·라운드 단위로 구조화하고, 팬 여론 분석을 위한 정제 기준 설정</li>
+                    <li>BERTopic 토픽 모델링과 LLM 기반 감정점수화를 활용해 비정형 댓글 데이터를 수치화</li>
+                    <li>PCA로 73개 경기력 지표를 점유·효율·수비 안정성 축으로 축소하고 팬 감정 지표와 상관 구조 분석</li>
                 </ul>
             </div>
 
+            <div class="slide-files-box">
+                <h4>Download Materials</h4>
+
+                <div class="file-button-wrap">
+                    <a class="file-button" href="files/kleague-presentation.pdf" download>발표자료</a>
+                    <a class="file-button" href="files/kleague-report.pdf" download>분석보고서</a>
+                </div>
+
+                <p class="slide-note">
+                    ※ 유튜브 댓글 수집, BERTopic 토픽 모델링, 감정분석, PCA 기반 경기력 지표 축소 및 상관분석 과정을 정리한 자료입니다.
+                </p>
+            </div>
         </div>
+
+    </div>
+</div>
     </section>
 
     <section id="awards">
