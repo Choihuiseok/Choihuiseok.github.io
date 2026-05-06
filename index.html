@@ -14,7 +14,91 @@
             --card-border: #f2f4f7;
             --blue-accent: #2563eb;
         }
+        /* ===== Career Direction Section ===== */
+.direction-card {
+    background: linear-gradient(135deg, #ffffff 0%, #fcfcfd 100%);
+    border-radius: 28px;
+    padding: 42px;
+    border: 1px solid #eaecf0;
+    box-shadow: 0 12px 30px rgba(16, 24, 40, 0.06);
+    position: relative;
+    overflow: hidden;
+}
 
+.direction-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 8px;
+    background: var(--kakao-yellow);
+}
+
+.direction-title {
+    font-size: 1.45rem;
+    color: var(--midnight-navy);
+    margin-bottom: 18px;
+    letter-spacing: -0.5px;
+}
+
+.direction-text {
+    font-size: 1.03rem;
+    line-height: 1.85;
+    color: #344054;
+    word-break: keep-all;
+    margin-bottom: 28px;
+}
+
+.direction-highlight {
+    color: var(--midnight-navy);
+    font-weight: 800;
+    background: linear-gradient(to top, rgba(255, 235, 0, 0.45) 45%, transparent 45%);
+}
+
+.direction-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.direction-item {
+    background: white;
+    border: 1px solid #eaecf0;
+    border-radius: 20px;
+    padding: 22px;
+}
+
+.direction-item span {
+    display: inline-block;
+    font-size: 0.8rem;
+    font-weight: 900;
+    color: var(--blue-accent);
+    margin-bottom: 8px;
+}
+
+.direction-item h4 {
+    font-size: 1rem;
+    color: var(--midnight-navy);
+    margin-bottom: 8px;
+}
+
+.direction-item p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: #475467;
+    word-break: keep-all;
+}
+
+@media (max-width: 900px) {
+    .direction-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .direction-card {
+        padding: 30px;
+    }
+}
         * { 
             margin: 0; 
             padding: 0; 
@@ -560,7 +644,55 @@
             </ul>
         </div>
     </section>
+    <section id="direction">
+    <h2>Career Direction</h2>
 
+    <div class="direction-card">
+        <h3 class="direction-title">데이터로 문제를 정의하고, 서비스로 해결하는 기획자를 지향합니다.</h3>
+
+        <p class="direction-text">
+            대학생활 동안 저는 데이터 분석과 서비스 기획에 가장 많은 시간을 써왔습니다. 
+            국민건강영양조사, NHIS, 유튜브 댓글 데이터 등을 활용한 분석 프로젝트를 수행하며 
+            데이터를 통해 문제를 바라보는 방법을 배웠고, SanmanTEC 프로젝트를 통해 하나의 아이디어를 
+            서비스 구조와 MVP 기능, 사업계획서, IR Pitching 자료로 구체화하는 경험도 했습니다.
+            <br><br>
+            다만 그 과정에서 한계도 분명히 느꼈습니다. 데이터 분석 프로젝트에서는 문제를 수치적으로 
+            해석하는 데 집중했지만, 그 결과를 실제 서비스로 구현하는 경험은 부족했습니다. 반대로 
+            SanmanTEC 프로젝트에서는 디지털 자산 상속이라는 문제를 발견하고 서비스를 기획했지만, 
+            문제 정의 자체가 충분한 데이터 분석에 기반했다고 보기는 어려웠습니다.
+            <br><br>
+            그래서 저는 앞으로 <span class="direction-highlight">데이터를 통해 사용자와 시장의 문제를 더 정확히 정의하고, 
+            이를 실제 서비스 경험으로 연결할 수 있는 PM / 서비스 기획자</span>로 성장하고 싶습니다. 
+            특히 디지털 자산과 금융 서비스 환경이 빠르게 변화하는 시대에, 기술과 시장의 흐름을 놓치지 않고 
+            사용자가 실제로 필요로 하는 서비스를 기획하는 사람이 되고 싶습니다.
+            <br><br>
+            지난 1년간 창업동아리 활동을 하며 사업계획서 작성, IR Pitching, 법률 멘토링, MVP 기획을 경험했지만, 
+            동시에 학생 개인의 시도만으로는 시장·기술·규제까지 고려한 서비스를 완성도 있게 실현하는 데 한계가 있다는 점도 알게 되었습니다. 
+            이제는 더 큰 서비스 환경 안에서 실무자들과 함께 배우고, 제가 해온 데이터 분석과 기획 경험을 실제 사용자에게 닿는 서비스로 
+            발전시키고 싶습니다.
+        </p>
+
+        <div class="direction-grid">
+            <div class="direction-item">
+                <span>01</span>
+                <h4>데이터 기반 문제 정의</h4>
+                <p>감이나 아이디어에만 의존하지 않고, 데이터를 통해 사용자와 시장의 문제를 구체적으로 파악하고 싶습니다.</p>
+            </div>
+
+            <div class="direction-item">
+                <span>02</span>
+                <h4>서비스 기획으로 연결</h4>
+                <p>분석 결과를 보고서에 머무르게 하지 않고, 사용자 시나리오와 기능 구조로 연결하는 기획자가 되고 싶습니다.</p>
+            </div>
+
+            <div class="direction-item">
+                <span>03</span>
+                <h4>금융·디지털 자산 흐름 이해</h4>
+                <p>디지털 화폐와 금융 서비스 변화 속에서 기술, 규제, 사용자 경험을 함께 고려하는 기획 역량을 쌓고 싶습니다.</p>
+            </div>
+        </div>
+    </div>
+</section>
     <section id="tech">
         <h2>Skills & Tools</h2>
 
