@@ -1371,30 +1371,30 @@
             },
             { 
                 q: "청소년 합병증, 예측 가능할까?",
-                processText: "“청소년 합병증, 예측 가능할까?”라는 물음표를 NHIS 코호트 구성 → SAS 전처리 → 위험요인 분석 과정으로 연결했습니다.",
-                resultText: "“청소년 합병증, 예측 가능할까?”라는 물음표를 신경합병증 발생 요인 분석 결과로 마침표 찍었습니다.",
+                processText: "“청소년 ECLS 환자의 신경합병증은 예측 가능할까?”라는 물음표를 학부연구생 연구 수행 → NHIS 빅데이터실 분석 → 기초통계 및 생존분석 과정으로 연결했습니다.",
+                resultText: "“청소년 합병증, 예측 가능할까?”라는 물음표를 청소년 ECLS 환자의 신경합병증 발생 및 예후 분석 결과로 마침표 찍었습니다.",
                 stages: [
                     {
-                        label: "01 DATA",
-                        title: "NHIS 환자 코호트 구성",
-                        desc: "건강보험공단 자료를 기반으로 18세 이하 ECLS 환자 코호트를 구성하고, 생존자와 사망자 분석군을 정의했습니다."
+                        label: "01 RESEARCH",
+                        title: "학부연구생 연구 주제 수행",
+                        desc: "의생명정보학 연구실 학부연구생으로 활동하며 청소년 ECLS 환자의 신경합병증 발생과 예후를 분석하는 연구 주제를 부여받아 수행했습니다."
                     },
                     {
-                        label: "02 PROCESS",
-                        title: "SAS 기반 전처리",
-                        desc: "신경합병증 관련 ICD-10 코드 기준을 정리하고, 분석 대상자 필터링과 주요 변수 생성을 수행했습니다."
+                        label: "02 COHORT",
+                        title: "NHIS 기반 분석 대상자 구축",
+                        desc: "건강보험공단 빅데이터실에 직접 방문해 NHIS 자료를 분석하고, 청소년 ECLS 환자 코호트와 신경합병증 발생군·미발생군 분석 테이블을 구축했습니다."
                     },
                     {
                         label: "03 ANALYSIS",
-                        title: "위험요인 분석",
-                        desc: "기초통계와 Cox 비례위험 모형을 활용해 장기 예후 및 신경합병증 관련 요인을 분석했습니다."
+                        title: "기초통계 및 생존분석 수행",
+                        desc: "신경합병증 발생 여부에 따른 기초통계분석을 진행하고, 사망 및 신경합병증 발생을 주요 사건으로 설정해 생존분석을 수행했습니다."
                     }
                 ],
-                tags: ["NHIS", "SAS", "코호트 구성", "ICD-10", "기초통계", "Cox 비례위험 모형", "위험요인 분석"],
+                tags: ["학부연구생", "NHIS 데이터 분석", "건강보험공단 빅데이터실", "코호트 구축", "발생군·미발생군 분류", "기초통계분석", "생존분석", "SAS 분석"],
                 processImages: [
-                    { src: "images/ecmo-cohort.png", caption: "연구 대상자 코호트 구성" },
-                    { src: "images/ecmo-baseline.png", caption: "생존자 기초통계 비교" },
-                    { src: "images/ecmo-cox.png", caption: "Cox 위험요인 분석" }
+                    { src: "images/ecmo-cohort.png", caption: "청소년 ECLS 환자 코호트 구성" },
+                    { src: "images/ecmo-baseline.png", caption: "신경합병증 발생 여부별 기초통계" },
+                    { src: "images/ecmo-survival.png", caption: "사망 및 신경합병증 생존분석" }
                 ]
             },
             { 
