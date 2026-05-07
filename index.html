@@ -120,6 +120,58 @@
         #ppt-close-btn { position: absolute; top: 40px; right: 50px; font-size: 5rem; cursor: pointer; color: white; opacity: 0.5; transition: 0.3s; }
         #ppt-close-btn:hover { opacity: 1; transform: rotate(90deg); }
 
+
+        /* ===== 📍 PPT 하단 이동 버튼 추가 ===== */
+        #ppt-step-controls {
+            position: absolute;
+            bottom: 28px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            z-index: 10001;
+        }
+        .ppt-step-btn {
+            border: 1px solid rgba(255,255,255,0.25);
+            background: rgba(255,255,255,0.12);
+            color: #fff;
+            padding: 12px 22px;
+            border-radius: 999px;
+            font-size: 1rem;
+            font-weight: 900;
+            cursor: pointer;
+            transition: 0.3s;
+            backdrop-filter: blur(10px);
+        }
+        .ppt-step-btn:hover:not(:disabled) {
+            background: var(--kakao-yellow);
+            color: var(--midnight-navy);
+            transform: translateY(-2px);
+        }
+        .ppt-step-btn:disabled {
+            opacity: 0.35;
+            cursor: not-allowed;
+        }
+        #ppt-step-label {
+            min-width: 58px;
+            text-align: center;
+            color: rgba(255,255,255,0.8);
+            font-weight: 900;
+            font-size: 0.95rem;
+        }
+
+        /* PPT 결과 카드 글자색 명시 */
+        #ppt-result-view .project-card { color: var(--text-main); }
+        #ppt-result-view .project-title,
+        #ppt-result-view .project-subtitle,
+        #ppt-result-view .project-details li,
+        #ppt-result-view .slide-role-box li,
+        #ppt-result-view .slide-image-card p,
+        #ppt-result-view .slide-role-box h4,
+        #ppt-result-view .slide-files-box h4 { color: var(--text-main); }
+        #ppt-result-view .file-button { color: #fff; }
+
         /* ===== 📍 커리어 방향성 (100% 원본 유지 - 절대 삭제 안 함) ===== */
         .direction-card { background: linear-gradient(135deg, #ffffff 0%, #fcfcfd 100%); border-radius: 28px; padding: 42px; border: 1px solid #eaecf0; box-shadow: 0 12px 30px rgba(16, 24, 40, 0.06); position: relative; overflow: hidden; }
         .direction-card::before { content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 8px; background: var(--kakao-yellow); }
@@ -434,6 +486,11 @@
                     </div>
             </div>
         </div>
+        <div id="ppt-step-controls">
+            <button class="ppt-step-btn" id="ppt-prev-btn" onclick="prevStep()">이전</button>
+            <span id="ppt-step-label">1 / 3</span>
+            <button class="ppt-step-btn" id="ppt-next-btn" onclick="nextStep()">다음</button>
+        </div>
     </div>
 
     <script>
@@ -467,6 +524,8 @@
             { q: "K리그 여론, 경기력과 관계는?", steps: ["유튜브 하이라이트 팬 댓글 데이터 수집/정제", "BERTopic 및 LLM 기반 팬 여론 수치화", "PCA 기반 경기력 지표와 팬 감정의 상관 분석"] }
         ];
 
+        let currentPPTStep = 0;
+
         function openPPTShow(idx) {
             const overlay = document.getElementById('ppt-overlay');
             const title = document.getElementById('ppt-main-title');
@@ -486,10 +545,26 @@
         function closePPTShow() { document.getElementById('ppt-overlay').style.display = 'none'; }
 
         function goToStep(step) {
+            currentPPTStep = step;
             document.querySelectorAll('.slide').forEach(s => s.classList.remove('active'));
             document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
             document.getElementById(`s-${step}`).classList.add('active');
             document.getElementById(`n-${step}`).classList.add('active');
+            updateStepButtons();
+        }
+
+        function nextStep() {
+            if (currentPPTStep < 2) goToStep(currentPPTStep + 1);
+        }
+
+        function prevStep() {
+            if (currentPPTStep > 0) goToStep(currentPPTStep - 1);
+        }
+
+        function updateStepButtons() {
+            document.getElementById('ppt-prev-btn').disabled = currentPPTStep === 0;
+            document.getElementById('ppt-next-btn').disabled = currentPPTStep === 2;
+            document.getElementById('ppt-step-label').innerText = `${currentPPTStep + 1} / 3`;
         }
     </script>
 </body>
