@@ -50,26 +50,25 @@
         .header-content .tagline { font-size: 1.3rem; color: var(--kakao-yellow); font-weight: 700; margin-bottom: 10px; }
         .header-content .mission { font-size: 1.4rem; opacity: 1; line-height: 1.4; word-break: keep-all; font-weight: 600; }
 
-        /* ===== About Me & Questions Grid ===== */
-        .about-layout { display: grid; grid-template-columns: 1.5fr 1fr; gap: 24px; margin-bottom: 82px; }
-        .card { background: white; border-radius: 24px; padding: 40px; border: 1px solid var(--card-border); box-shadow: 0 4px 6px rgba(0,0,0,0.02); }
-        h2 { font-size: 1.8rem; color: var(--midnight-navy); margin-bottom: 25px; display: flex; align-items: center; gap: 12px; }
-        h2::before { content: ""; width: 8px; height: 30px; background: var(--kakao-yellow); border-radius: 4px; }
+        section { margin-bottom: 82px; }
+        h2 { font-size: 1.9rem; color: var(--midnight-navy); margin-bottom: 30px; display: flex; align-items: center; gap: 15px; }
+        h2::before { content: ""; width: 8px; height: 34px; background: var(--kakao-yellow); border-radius: 4px; }
+        h2::after { content: ""; flex: 1; height: 1px; background: #eaecf0; }
 
-        .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 25px; }
+        .card { background: white; border-radius: 24px; padding: 40px; border: 1px solid var(--card-border); box-shadow: 0 4px 6px rgba(0,0,0,0.02); }
+
+        /* About Me & Q-Grid Layout */
+        .about-layout { display: grid; grid-template-columns: 1.5fr 1fr; gap: 24px; margin-bottom: 82px; }
+        .info-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
         .info-item { padding: 16px; background: #fcfcfd; border-radius: 16px; text-align: center; border: 1px solid var(--card-border); }
         .info-item span { display: block; font-size: 0.85rem; color: #667085; margin-bottom: 5px; }
         .info-item strong { font-size: 1rem; color: var(--midnight-navy); }
         #live-counter { font-family: 'Courier New', Courier, monospace; color: var(--blue-accent); font-weight: 800; }
-
-        .info-list { list-style: none; font-size: 0.95rem; }
-        .info-list li { margin-bottom: 12px; padding-left: 28px; position: relative; word-break: keep-all; }
+        .info-list { list-style: none; margin-top: 25px; }
+        .info-list li { margin-bottom: 12px; font-size: 1.05rem; padding-left: 30px; position: relative; word-break: keep-all; }
         .info-list li::before { content: "📍"; position: absolute; left: 0; }
 
-        .value-btn { background: var(--midnight-navy); color: white; border: none; padding: 14px; border-radius: 14px; width: 100%; font-weight: 800; cursor: pointer; margin-top: 20px; transition: 0.3s; }
-        #value-text { display: none; margin-top: 15px; padding: 20px; background: #f9fafb; border-left: 4px solid var(--kakao-yellow); font-size: 0.95rem; line-height: 1.8; color: #475467; }
-
-        .q-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; height: 100%; }
+        .q-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; height: 100%; }
         .q-item { 
             background: var(--midnight-navy); color: var(--kakao-yellow); border-radius: 20px;
             display: flex; flex-direction: column; align-items: center; justify-content: center;
@@ -79,21 +78,35 @@
         .q-mark { font-size: 2.5rem; font-weight: 900; margin-bottom: 10px; }
         .q-item p { color: white; font-size: 0.85rem; font-weight: 600; line-height: 1.4; }
 
-        /* ===== Project Detail Styles ===== */
-        #project-display-area { display: none; margin-top: 40px; padding-bottom: 80px; }
-        .project-card { margin-bottom: 35px; display: none; animation: slideUp 0.6s ease; }
+        /* Career Direction Styles */
+        .direction-card { background: linear-gradient(135deg, #ffffff 0%, #fcfcfd 100%); border-radius: 28px; padding: 42px; border: 1px solid #eaecf0; box-shadow: 0 12px 30px rgba(16, 24, 40, 0.06); position: relative; overflow: hidden; }
+        .direction-card::before { content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 8px; background: var(--kakao-yellow); }
+        .direction-title { font-size: 1.45rem; color: var(--midnight-navy); margin-bottom: 18px; letter-spacing: -0.5px; }
+        .direction-text { font-size: 1.03rem; line-height: 1.85; color: #344054; word-break: keep-all; margin-bottom: 28px; }
+        .direction-highlight { color: var(--midnight-navy); font-weight: 800; background: linear-gradient(to top, rgba(255, 235, 0, 0.45) 45%, transparent 45%); }
+        .direction-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+        .direction-item { background: white; border: 1px solid #eaecf0; border-radius: 20px; padding: 22px; }
+        .direction-item span { display: inline-block; font-size: 0.8rem; font-weight: 900; color: var(--blue-accent); margin-bottom: 8px; }
+        .direction-item h4 { font-size: 1rem; color: var(--midnight-navy); margin-bottom: 8px; }
+        .direction-item p { font-size: 0.9rem; line-height: 1.6; color: #475467; word-break: keep-all; }
+
+        /* Project Cards */
+        #project-display-area { display: none; margin-top: 40px; }
+        .project-card { margin-bottom: 35px; display: none; animation: slideUp 0.6s ease; transition: all 0.3s ease; }
         .project-card.active { display: block; }
+        .project-card:hover { transform: translateY(-6px); box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05); }
         @keyframes slideUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
 
         .role-badge { background: var(--kakao-yellow); color: var(--midnight-navy); padding: 6px 18px; border-radius: 50px; font-size: 0.85rem; font-weight: 800; display: inline-block; margin-bottom: 20px; }
         .project-title { font-size: 1.65rem; color: var(--midnight-navy); margin-bottom: 10px; letter-spacing: -0.5px; }
         .project-subtitle { font-size: 1.1rem; color: #475467; font-weight: 650; margin-bottom: 20px; word-break: keep-all; }
-        .project-details { list-style: none; margin-bottom: 20px; }
+        .project-details { list-style: none; }
         .project-details li { margin-bottom: 12px; padding-left: 25px; position: relative; font-size: 0.96rem; word-break: keep-all; }
         .project-details li::before { content: "→"; position: absolute; left: 0; color: var(--midnight-navy); font-weight: 900; }
-        .detail-button { margin-top: 10px; padding: 14px 24px; border: none; border-radius: 14px; background: var(--midnight-navy); color: white; font-size: 0.96rem; font-weight: 800; cursor: pointer; transition: 0.25s ease; }
+        .detail-button { margin-top: 24px; padding: 14px 24px; border: none; border-radius: 14px; background: var(--midnight-navy); color: white; font-size: 0.96rem; font-weight: 800; cursor: pointer; transition: 0.25s ease; }
         .detail-button:hover { background: #344054; transform: translateY(-2px); }
 
+        /* Slide Detail Section */
         .project-slide-section { margin-top: 32px; display: none; }
         .project-slide-section.active { display: block; }
         .portfolio-slide { background: white; border-radius: 32px; border: 1px solid #eaecf0; border-top: 12px solid var(--kakao-yellow); box-shadow: 0 28px 55px rgba(16, 24, 40, 0.11); padding: 46px 48px; }
@@ -101,34 +114,32 @@
         .slide-kicker { display: inline-block; background: var(--midnight-navy); color: var(--kakao-yellow); font-size: 0.82rem; font-weight: 900; padding: 8px 18px; border-radius: 999px; margin-bottom: 18px; }
         .slide-title { font-size: 2.25rem; line-height: 1.25; color: var(--midnight-navy); letter-spacing: -1.2px; margin-bottom: 12px; }
         .slide-subtitle { max-width: 920px; font-size: 1.06rem; font-weight: 650; color: #475467; line-height: 1.65; word-break: keep-all; }
-
         .slide-image-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-bottom: 28px; }
         .slide-image-card { background: #f9fafb; border: 1px solid #eaecf0; border-radius: 24px; overflow: hidden; box-shadow: 0 8px 18px rgba(16, 24, 40, 0.05); }
-        .slide-image-card img { width: 100%; height: 300px; object-fit: contain; display: block; background: #f2f4f7; cursor: zoom-in; }
+        .slide-image-card img { width: 100%; height: 300px; object-fit: contain; background: #f2f4f7; cursor: zoom-in; }
         .slide-image-card p { padding: 14px 16px; font-size: 0.96rem; font-weight: 850; color: var(--midnight-navy); text-align: center; background: white; border-top: 1px solid #eaecf0; }
-
         .slide-bottom-grid { display: grid; grid-template-columns: 1.45fr 1fr; gap: 24px; }
         .slide-role-box, .slide-files-box { background: #fcfcfd; border: 1px solid #eaecf0; border-radius: 24px; padding: 26px; }
-        .slide-role-box h4, .slide-files-box h4 { font-size: 1.1rem; color: var(--midnight-navy); margin-bottom: 14px; }
+        .slide-role-box h4, .slide-files-box h4 { font-size: 1.08rem; color: var(--midnight-navy); margin-bottom: 14px; }
         .slide-role-box ul { list-style: none; }
         .slide-role-box li { position: relative; padding-left: 20px; margin-bottom: 10px; font-size: 0.96rem; line-height: 1.58; color: #344054; word-break: keep-all; }
         .slide-role-box li::before { content: "•"; position: absolute; left: 0; color: var(--blue-accent); font-weight: 900; }
-        
         .file-button-wrap { display: grid; grid-template-columns: 1fr; gap: 12px; }
         .file-button { display: block; text-align: center; text-decoration: none; background: white; color: var(--midnight-navy); border: 1px solid #d0d5dd; border-radius: 16px; padding: 15px 12px; font-size: 0.96rem; font-weight: 850; transition: 0.25s ease; }
         .file-button:hover { background: var(--midnight-navy); color: white; transform: translateY(-2px); }
         .slide-note { margin-top: 14px; font-size: 0.82rem; color: #667085; word-break: keep-all; }
 
-        /* 이미지 확대 모달 */
+        /* Image Modal */
         .image-modal { display: none; position: fixed; z-index: 10000; inset: 0; background: rgba(16, 24, 40, 0.9); align-items: center; justify-content: center; padding: 40px; }
         .image-modal.active { display: flex; }
         .image-modal-content { max-width: 94vw; max-height: 86vh; border-radius: 20px; background: white; object-fit: contain; }
         .close-btn { position: fixed; top: 28px; right: 36px; color: white; font-size: 3rem; font-weight: 800; cursor: pointer; }
 
-        footer { text-align: center; padding: 60px 0; color: #98a2b3; }
+        footer { text-align: center; padding: 60px 0; color: #98a2b3; border-top: 1px solid #eaecf0; }
 
         @media (max-width: 1000px) {
             .about-layout { grid-template-columns: 1fr; }
+            .direction-grid { grid-template-columns: 1fr; }
             .slide-image-row { grid-template-columns: 1fr; }
             .slide-bottom-grid { grid-template-columns: 1fr; }
         }
@@ -174,11 +185,6 @@
                     <li>전남대학교 SanmanTEC AI창업동아리 회장(2025.04 ~ 2026. 08)</li>
                     <li>전남대학교 빅데이터융합학과 학생회 사무부장(2021.04 ~ 2022.02)</li>
                 </ul>
-                <button class="value-btn" onclick="toggleValue()">가치관?</button>
-                <div id="value-text">
-                    현상의 의문(<span class="mark">?</span>)을 데이터 분석으로 파고들어 확실한 해결책(<span class="mark">.</span>)을 제시합니다. 
-                    단순한 수치 나열을 넘어, 비즈니스의 마침표가 될 수 있는 실행 전략을 만드는 PM이 되겠습니다.
-                </div>
             </section>
 
             <section class="card">
@@ -192,8 +198,39 @@
             </section>
         </div>
 
+        <section id="direction">
+            <h2>Career Direction</h2>
+            <div class="direction-card">
+                <h3 class="direction-title">데이터를 통해 “풀어야 할 문제”를 더 정확히 고르는 기획자가 되고 싶습니다.</h3>
+                <p class="direction-text">
+                    SanmanTEC 프로젝트를 진행하며 처음으로 하나의 문제를 서비스 아이템으로 구체화해보았습니다. 디지털 자산을 보유한 사람이 갑작스러운 사고나 사망 상황에서 자산을 가족에게 안전하게 넘기기 어렵다는 문제를 발견했고, 이를 비수탁 지갑 기반 상속 서비스라는 형태로 기획했습니다. 이후 MVP 기능 범위, 사용자 시나리오, 사업계획서, IR Pitching 자료까지 만들며 아이디어가 서비스 구조로 바뀌는 과정을 직접 경험했습니다.
+                    <br><br>
+                    하지만 이 과정에서 한계도 느꼈습니다. 문제의식은 분명했지만, <span class="direction-highlight">이 문제가 얼마나 많은 사용자에게 반복적으로 발생하는지, 어떤 상황에서 가장 크게 느껴지는지, 어떤 기능부터 검증해야 하는지</span>를 충분히 데이터로 확인하지 못했습니다. 반대로 국민건강영양조사, NHIS, 유튜브 댓글 분석 프로젝트에서는 데이터를 통해 현상을 분석했지만, 그 결과를 실제 사용자가 경험할 수 있는 서비스로 연결하는 과정은 부족했습니다.
+                    <br><br>
+                    그래서 저는 앞으로 데이터를 단순히 분석 결과를 설명하는 데 쓰는 것이 아니라, <span class="direction-highlight">문제의 크기와 우선순위를 판단하고, 그 문제를 해결할 서비스 흐름으로 번역하는 기획자</span>가 되고 싶습니다. 특히 금융과 디지털 자산 시장처럼 기술, 규제, 사용자 신뢰가 함께 움직이는 영역에서 변화의 흐름을 읽고, 사용자가 실제로 필요로 하는 서비스를 구체화하는 역량을 쌓고 싶습니다.
+                </p>
+                <div class="direction-grid">
+                    <div class="direction-item"><span>01</span><h4>문제의 우선순위 판단</h4><p>아이디어의 가능성보다, 실제 사용자가 반복적으로 겪는 문제인지 데이터와 맥락으로 확인합니다.</p></div>
+                    <div class="direction-item"><span>02</span><h4>서비스 흐름으로 번역</h4><p>분석 결과를 보고서에 머무르게 하지 않고, 사용자 시나리오와 기능 구조로 구체화합니다.</p></div>
+                    <div class="direction-item"><span>03</span><h4>금융 변화에 대한 감각</h4><p>디지털 자산과 금융 서비스 변화 속에서 기술, 규제, 신뢰를 함께 고려하는 기획자가 되고 싶습니다.</p></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="tech">
+            <h2>Skills & Tools</h2>
+            <div class="card">
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 25px;">
+                    <div><h4 style="color: var(--midnight-navy); margin-bottom: 10px; border-bottom: 3px solid var(--kakao-yellow); display: inline-block;">Data Analysis</h4><p style="font-size: 0.96rem;">Python, R, SQL, SAS</p></div>
+                    <div><h4 style="color: var(--midnight-navy); margin-bottom: 10px; border-bottom: 3px solid var(--kakao-yellow); display: inline-block;">Data Experience</h4><p style="font-size: 0.96rem;">NHIS(건강보험공단), KNHANES(국민건강영양조사)</p></div>
+                    <div><h4 style="color: var(--midnight-navy); margin-bottom: 10px; border-bottom: 3px solid var(--kakao-yellow); display: inline-block;">PM Tools</h4><p style="font-size: 0.96rem;">Notion, Google Docs, GitHub</p></div>
+                </div>
+            </div>
+        </section>
+
         <section id="project-display-area">
-            <h2 style="font-size: 1.6rem; margin-bottom: 35px;"> 데이터 분석으로 찍은 마침표 <span class="mark">.</span> </h2>
+            <h2 style="font-size: 1.6rem; margin-bottom: 35px;">데이터 분석으로 찍은 마침표 <span class="mark">.</span></h2>
+
             <div class="card project-card">
                 <span class="role-badge">Founder & Project Lead</span>
                 <h3 class="project-title">SanmanTEC (창업동아리) <span class="mark">.</span></h3>
@@ -281,7 +318,6 @@
                                 <div class="file-button-wrap">
                                     <a class="file-button" href="files/health-report.pdf" download>분석보고서</a>
                                 </div>
-                                <p class="slide-note">※ 건강 유형화 결과 및 맞춤형 관리 전략 보고서입니다.</p>
                             </div>
                         </div>
                     </div>
@@ -303,7 +339,6 @@
                         <div class="slide-header">
                             <span class="slide-kicker">PROJECT 03 · MEDICAL DATA / SURVIVAL ANALYSIS</span>
                             <h3 class="slide-title">청소년 ECLS 환자의 신경합병증 발생 요인 분석</h3>
-                            <p class="slide-subtitle">NHIS 자료를 활용해 18세 이하 ECLS 환자 코호트를 구성하고, 신경합병증 발생 시점에 따른 예후 차이와 위험요인을 분석한 의생명정보학 연구 프로젝트입니다.</p>
                         </div>
                         <div class="slide-image-row">
                             <div class="slide-image-card"><img src="images/ecmo-cohort.png" onclick="zoomImg(this)"><p>연구 대상자 코호트 구성</p></div>
@@ -315,7 +350,7 @@
                                 <h4>My Role</h4>
                                 <ul>
                                     <li>NHIS 자료 기반 18세 이하 ECLS 환자 코호트를 구성하고 생존자·사망자 및 신경합병증 발생 시점별 분석군 정의</li>
-                                    <li>신경합병증 관련 ICD-10 코드 기준을 정리하고 ECLS 이전 합병증 환자를 제외한 분석 대상자 필터링 수행</li>
+                                    <li>신경합병증 관련 ICD-10 코드 기준을 정리하고 분석 대상자 필터링 수행</li>
                                     <li>SAS를 활용해 생존자·사망자 기초통계, 진단검사, 재활치료, 장기 예후 관련 변수 분석</li>
                                     <li>Cox 비례위험 모형을 활용해 사망 위험 및 신경합병증 발생 위험요인 분석 보조</li>
                                 </ul>
@@ -325,7 +360,6 @@
                                 <div class="file-button-wrap">
                                     <a class="file-button" href="files/ecmo-research-summary.pdf" download>연구 요약본</a>
                                 </div>
-                                <p class="slide-note">※ 데이터 보안상 연구 결과 요약본만 제공합니다.</p>
                             </div>
                         </div>
                     </div>
@@ -347,7 +381,6 @@
                         <div class="slide-header">
                             <span class="slide-kicker">PROJECT 04 · SPORTS DATA / NLP ANALYSIS</span>
                             <h3 class="slide-title">K리그 팬 여론과 경기력의 상관 구조 분석</h3>
-                            <p class="slide-subtitle">유튜브 댓글 기반 팬 여론 데이터와 K리그 경기력 지표를 결합하여, 팬 감정·토픽 구조와 실제 경기력 간의 관계를 탐색한 소셜 데이터 분석 프로젝트입니다.</p>
                         </div>
                         <div class="slide-image-row">
                             <div class="slide-image-card"><img src="images/kleague-data.png" onclick="zoomImg(this)"><p>유튜브 댓글 데이터 수집</p></div>
@@ -370,11 +403,31 @@
                                     <a class="file-button" href="files/kleague-presentation.pdf" download>발표자료</a>
                                     <a class="file-button" href="files/kleague-report.pdf" download>분석보고서</a>
                                 </div>
-                                <p class="slide-note">※ 자연어 처리 및 상관분석 과정을 정리한 자료입니다.</p>
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
+        </section>
+
+        <section id="awards">
+            <h2>Honors & Awards</h2>
+            <div class="card" style="border-left: 10px solid var(--kakao-yellow);">
+                <ul style="list-style: none;">
+                    <li style="margin-bottom: 12px;">🏆 <strong>2025 호남지방통계청 통계분석 경진대회 최우수상</strong></li>
+                    <li style="margin-bottom: 12px;">🏆 <strong>2025 J-Curve Startup 부트캠프 최우수상</strong></li>
+                    <li>🏆 <strong>2025 AICOSS 산학협력프로젝트 경진대회 동상</strong></li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>Contact</h2>
+            <div class="card" style="text-align: center; border-bottom: 10px solid var(--kakao-yellow);">
+                <p style="font-size: 1.1rem; margin-bottom: 15px;">포트폴리오를 봐주셔서 감사합니다. 더 자세한 경험과 프로젝트 과정은 언제든지 공유드리겠습니다.</p>
+                <p style="font-size: 1.2rem; font-weight: 700;">
+                    Email: <a href="mailto:noanlove1@gmail.com" style="color: var(--midnight-navy); text-decoration: underline; text-decoration-color: var(--kakao-yellow);">noanlove1@gmail.com</a>
+                </p>
             </div>
         </section>
 
@@ -387,7 +440,6 @@
     </div>
 
     <script>
-        // 1. 인트로 전환
         function handleIntroClick() {
             const q = document.getElementById('big-q');
             const overlay = document.getElementById('intro-overlay');
@@ -403,7 +455,6 @@
             }, 500);
         }
 
-        // 2. 실시간 카운터
         const birthDate = new Date('2001-04-23T00:00:00');
         function updateCounter() {
             const now = new Date(); const diff = now - birthDate;
@@ -415,20 +466,16 @@
         }
         setInterval(updateCounter, 1000);
 
-        // 3. 가치관 토글
         function toggleValue() { const v = document.getElementById('value-text'); v.style.display = (v.style.display === 'block') ? 'none' : 'block'; }
 
-        // 4. 프로젝트 표시 & 스크롤
         function showProject(idx) {
             const area = document.getElementById('project-display-area'); const cards = document.querySelectorAll('.project-card');
             area.style.display = 'block'; cards.forEach(c => c.classList.remove('active')); cards[idx].classList.add('active');
             window.scrollTo({ top: cards[idx].offsetTop - 50, behavior: 'smooth' });
         }
 
-        // 5. 슬라이드 토글
         function toggleSlide(id, btn) { const s = document.getElementById(id); s.classList.toggle('active'); btn.innerText = s.classList.contains('active') ? '상세정보 닫기' : '상세정보 보기'; }
 
-        // 6. 이미지 줌
         function zoomImg(img) { const m = document.getElementById('modal'); const mi = document.getElementById('modal-img'); mi.src = img.src; m.classList.add('active'); }
     </script>
 </body>
