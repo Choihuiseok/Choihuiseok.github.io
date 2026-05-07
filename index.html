@@ -117,7 +117,30 @@
         .slide-q-title { font-size: 3.5rem; font-weight: 800; text-align: center; word-break: keep-all; }
 
         /* PPT 2단계: 과정 (→) - 희석님이 새롭게 구성할 PPT 슬라이드 레이아웃 */
-        .ppt-process-slide { width: 100%; height: 100%; background: white; border-radius: 40px; color: var(--midnight-navy); padding: 70px; display: flex; flex-direction: column; box-shadow: 0 30px 60px rgba(0,0,0,0.5); }
+        .ppt-process-slide { width: 100%; height: 100%; background: white; border-radius: 40px; color: var(--midnight-navy); padding: 48px 60px; display: flex; flex-direction: column; box-shadow: 0 30px 60px rgba(0,0,0,0.5); }
+
+        /* PPT 2단계: 과정 (→) - 나의 실행 화살표 컨셉 */
+        .process-concept-header {
+            width: 100%; margin-bottom: 34px;
+            background: linear-gradient(135deg, #101828 0%, #1d2939 100%);
+            border-radius: 28px; padding: 28px 34px; color: white;
+            border-left: 10px solid var(--kakao-yellow);
+            box-shadow: 0 20px 50px rgba(16,24,40,0.18);
+        }
+        .process-small-label {
+            display: inline-block; font-size: 0.8rem; font-weight: 900;
+            letter-spacing: 2px; color: var(--kakao-yellow); margin-bottom: 8px;
+        }
+        .process-concept-header h3 {
+            font-size: 2.2rem; font-weight: 900; margin-bottom: 8px; color: white;
+        }
+        .process-concept-header h3 span {
+            color: var(--kakao-yellow); font-size: 2.8rem; line-height: 1;
+        }
+        .process-concept-header p {
+            font-size: 1.05rem; color: rgba(255,255,255,0.78);
+            font-weight: 600; word-break: keep-all;
+        }
         .ppt-slide-title { border-bottom: 6px solid var(--kakao-yellow); margin-bottom: 45px; padding-bottom: 20px; }
         .ppt-slide-title h3 { font-size: 3rem; color: var(--midnight-navy); }
         .ppt-slide-content { display: grid; grid-template-columns: 1.2fr 1fr; gap: 50px; flex: 1; }
@@ -126,9 +149,33 @@
         .ppt-work-list li::before { content: "→"; position: absolute; left: 0; color: var(--blue-accent); font-weight: 900; }
         .ppt-visual-area { background: #f2f4f7; border-radius: 25px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 800; color: #98a2b3; text-align: center; }
 
-        /* PPT 3단계: 결과 (.) - 기존 카드가 화면 정중앙에 고정 */
-        #ppt-result-view { width: 100%; height: 100%; overflow-y: auto; padding: 40px; display: flex; justify-content: center; align-items: flex-start; }
-        #ppt-result-view .project-card { display: block !important; width: 100%; max-width: 1050px; margin: 0 auto; box-shadow: 0 0 80px rgba(255,255,255,0.15); border: 2px solid rgba(255,255,255,0.1); }
+        /* PPT 3단계: 결과 (.) - 나의 결과 마침표 컨셉 */
+        .ppt-result-wrap {
+            width: 100%; height: 100%; overflow-y: auto; padding: 34px 40px 50px;
+        }
+        .result-concept-header {
+            width: 100%; max-width: 1050px; margin: 0 auto 22px;
+            background: linear-gradient(135deg, #101828 0%, #1d2939 100%);
+            border-radius: 28px; padding: 28px 34px; color: white;
+            border-left: 10px solid var(--kakao-yellow);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.25);
+        }
+        .result-small-label {
+            display: inline-block; font-size: 0.8rem; font-weight: 900;
+            letter-spacing: 2px; color: var(--kakao-yellow); margin-bottom: 8px;
+        }
+        .result-concept-header h3 {
+            font-size: 2.2rem; font-weight: 900; margin-bottom: 8px; color: white;
+        }
+        .result-concept-header h3 span {
+            color: var(--kakao-yellow); font-size: 2.8rem; line-height: 1;
+        }
+        .result-concept-header p {
+            font-size: 1.05rem; color: rgba(255,255,255,0.78);
+            font-weight: 600; word-break: keep-all;
+        }
+        #ppt-result-view { width: 100%; padding: 0; display: flex; justify-content: center; align-items: flex-start; overflow: visible; }
+        #ppt-result-view .project-card { display: block !important; width: 100%; max-width: 1050px; margin: 0 auto; box-shadow: 0 0 80px rgba(255,255,255,0.15); border: 2px solid rgba(255,255,255,0.1); color: var(--text-main); }
 
         #ppt-close-btn { position: absolute; top: 40px; right: 50px; font-size: 5rem; cursor: pointer; color: white; opacity: 0.5; transition: 0.3s; }
         #ppt-close-btn:hover { opacity: 1; transform: rotate(90deg); }
@@ -249,7 +296,7 @@
                 <h2>About Me</h2>
                 <div id="about-reveal-box" class="about-reveal-box" onclick="revealAboutMe()">
                     <div class="about-reveal-q">?</div>
-                    <p class="about-reveal-text">나의 물음표를 마침표로 만들기</p>
+                    <p class="about-reveal-text">나의 물음표를 마침표로 만드는 과정</p>
                 </div>
                 <div id="about-content">
                     <div class="info-grid">
@@ -486,7 +533,11 @@
 
             <div class="slide" id="s-1">
                 <div class="ppt-process-slide">
-                    <div class="ppt-slide-title"><h3>What I Did (과정 및 실행) <span style="color:var(--blue-accent)">→</span></h3></div>
+                    <div class="process-concept-header">
+                        <span class="process-small-label">MY PROCESS</span>
+                        <h3>나의 실행 화살표 <span>→</span></h3>
+                        <p id="process-concept-text">물음표로 시작한 문제를 분석, 설계, 실행의 흐름으로 연결했습니다.</p>
+                    </div>
                     <div class="ppt-slide-content">
                         <div>
                             <ul class="ppt-work-list" id="ppt-dynamic-steps">
@@ -501,8 +552,16 @@
             </div>
 
             <div class="slide" id="s-2">
-                <div id="ppt-result-view">
+                <div class="ppt-result-wrap">
+                    <div class="result-concept-header">
+                        <span class="result-small-label">MY RESULT</span>
+                        <h3>나의 결과 마침표 <span>.</span></h3>
+                        <p id="result-concept-text">물음표로 시작한 질문을 실행 가능한 결과로 정리했습니다.</p>
                     </div>
+
+                    <div id="ppt-result-view">
+                    </div>
+                </div>
             </div>
         </div>
         <div id="ppt-step-controls">
@@ -556,8 +615,12 @@
             const title = document.getElementById('ppt-main-title');
             const steps = document.getElementById('ppt-dynamic-steps');
             const resultView = document.getElementById('ppt-result-view');
+            const resultText = document.getElementById('result-concept-text');
+            const processText = document.getElementById('process-concept-text');
 
             title.innerText = pptDataStore[idx].q;
+            processText.innerText = `\"${pptDataStore[idx].q}\"라는 물음표를 분석, 설계, 실행의 흐름으로 연결했습니다.`;
+            resultText.innerText = `\"${pptDataStore[idx].q}\"라는 물음표를 프로젝트 실행 결과로 마침표 찍었습니다.`;
             steps.innerHTML = pptDataStore[idx].steps.map(s => `<li>${s}</li>`).join('');
             
             // 📍 결과 카드 100% 원본 복제해서 중앙 삽입
