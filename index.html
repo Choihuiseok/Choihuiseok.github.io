@@ -12,6 +12,7 @@
             --text-main: #1d2939;
             --card-border: #f2f4f7;
             --blue-accent: #2563eb;
+            --concept-bold: 900; /* ?와 .을 위한 최대 굵기 */
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -21,6 +22,9 @@
             overflow-x: hidden;
         }
 
+        /* 굵게 표시할 기호 스타일 */
+        .mark { font-weight: var(--concept-bold); }
+
         /* ===== 📍 인트로 오버레이 (첫 화면) ===== */
         #intro-overlay {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%;
@@ -29,7 +33,7 @@
             transition: all 0.8s cubic-bezier(0.19, 1, 0.22, 1);
         }
         #big-q { font-size: 12rem; font-weight: 900; color: var(--kakao-yellow); transition: all 0.5s ease; }
-        #click-hint { color: rgba(255,255,255,0.5); margin-top: 20px; font-size: 1.1rem; letter-spacing: 2px; }
+        #click-hint { color: rgba(255,255,255,0.7); margin-top: 20px; font-size: 1.3rem; font-weight: 700; letter-spacing: 1px; }
 
         /* ===== 📍 메인 콘텐츠 영역 ===== */
         #main-content { display: none; opacity: 0; max-width: 1180px; margin: 0 auto; padding: 0 24px; transition: opacity 1s ease; }
@@ -43,8 +47,8 @@
         .profile-img-container { flex-shrink: 0; width: 190px; height: 190px; border-radius: 50%; border: 4px solid rgba(255, 255, 255, 0.1); overflow: hidden; }
         .profile-img-container img { width: 100%; height: 100%; object-fit: cover; }
         .header-content h1 { font-size: 2.9rem; font-weight: 800; margin-bottom: 10px; }
-        .header-content .tagline { font-size: 1.3rem; color: var(--kakao-yellow); font-weight: 700; margin-bottom: 15px; }
-        .header-content .mission { font-size: 1.1rem; opacity: 0.88; line-height: 1.6; word-break: keep-all; }
+        .header-content .tagline { font-size: 1.3rem; color: var(--kakao-yellow); font-weight: 700; margin-bottom: 10px; }
+        .header-content .mission { font-size: 1.4rem; opacity: 1; line-height: 1.4; word-break: keep-all; font-weight: 600; }
 
         /* ===== About Me & Questions Grid ===== */
         .about-layout { display: grid; grid-template-columns: 1.5fr 1fr; gap: 24px; margin-bottom: 82px; }
@@ -75,7 +79,7 @@
         .q-mark { font-size: 2.5rem; font-weight: 900; margin-bottom: 10px; }
         .q-item p { color: white; font-size: 0.85rem; font-weight: 600; line-height: 1.4; }
 
-        /* ===== Project Section Styles (Full Restore) ===== */
+        /* ===== Project Detail Styles ===== */
         #project-display-area { display: none; margin-top: 40px; padding-bottom: 80px; }
         .project-card { margin-bottom: 35px; display: none; animation: slideUp 0.6s ease; }
         .project-card.active { display: block; }
@@ -90,7 +94,6 @@
         .detail-button { margin-top: 10px; padding: 14px 24px; border: none; border-radius: 14px; background: var(--midnight-navy); color: white; font-size: 0.96rem; font-weight: 800; cursor: pointer; transition: 0.25s ease; }
         .detail-button:hover { background: #344054; transform: translateY(-2px); }
 
-        /* 슬라이드 내부 복구 */
         .project-slide-section { margin-top: 32px; display: none; }
         .project-slide-section.active { display: block; }
         .portfolio-slide { background: white; border-radius: 32px; border: 1px solid #eaecf0; border-top: 12px solid var(--kakao-yellow); box-shadow: 0 28px 55px rgba(16, 24, 40, 0.11); padding: 46px 48px; }
@@ -106,7 +109,7 @@
 
         .slide-bottom-grid { display: grid; grid-template-columns: 1.45fr 1fr; gap: 24px; }
         .slide-role-box, .slide-files-box { background: #fcfcfd; border: 1px solid #eaecf0; border-radius: 24px; padding: 26px; }
-        .slide-role-box h4, .slide-files-box h4 { font-size: 1.08rem; color: var(--midnight-navy); margin-bottom: 14px; }
+        .slide-role-box h4, .slide-files-box h4 { font-size: 1.1rem; color: var(--midnight-navy); margin-bottom: 14px; }
         .slide-role-box ul { list-style: none; }
         .slide-role-box li { position: relative; padding-left: 20px; margin-bottom: 10px; font-size: 0.96rem; line-height: 1.58; color: #344054; word-break: keep-all; }
         .slide-role-box li::before { content: "•"; position: absolute; left: 0; color: var(--blue-accent); font-weight: 900; }
@@ -135,7 +138,7 @@
 
     <div id="intro-overlay" onclick="handleIntroClick()">
         <div id="big-q">?</div>
-        <p id="click-hint">Click to see the answer</p>
+        <p id="click-hint">Huiseok's Portfolio</p>
     </div>
 
     <div id="main-content">
@@ -145,8 +148,10 @@
             </div>
             <div class="header-content">
                 <p class="tagline">Data-Driven Service Planner</p>
-                <h1>최희석 <span style="color:var(--kakao-yellow)">.</span></h1>
-                <p class="mission">"데이터를 바탕으로 사용자 문제를 발견하고, 서비스 경험과 실행 전략으로 구체화하는 <span style="color:var(--kakao-yellow); font-weight:800;">PM / 서비스 기획자</span>를 지향합니다."</p>
+                <h1>최희석 <span style="color:var(--kakao-yellow); font-weight: 900;">.</span></h1>
+                <p class="mission">
+                    "<span class="mark">?</span>를 <span class="mark">.</span>로 만드는 사람, 최희석입니다."
+                </p>
             </div>
         </header>
 
@@ -157,7 +162,11 @@
                     <div class="info-item"><span>University</span><strong>전남대학교</strong></div>
                     <div class="info-item"><span>Major</span><strong>빅데이터융합학과 4학년</strong></div>
                     <div class="info-item"><span>Birth</span><strong id="live-counter">0d 0h 0m 0s</strong></div>
-                    <div class="info-item"><span>Focus</span><strong style="color: var(--blue-accent); font-size: 1.1rem;">? → .</strong></div>
+                    <div class="info-item">
+                        <span>Focus</span><strong style="color: var(--blue-accent); font-size: 1.1rem;">
+                            <span class="mark">?</span> → <span class="mark">.</span>
+                        </strong>
+                    </div>
                 </div>
                 <ul class="info-list">
                     <li>전남대학교 빅데이터융합학과 4학년 재학 (2021.03 ~ 2027.02 예정)</li>
@@ -165,9 +174,10 @@
                     <li>전남대학교 SanmanTEC AI창업동아리 회장(2025.04 ~ 2026. 08)</li>
                     <li>전남대학교 빅데이터융합학과 학생회 사무부장(2021.04 ~ 2022.02)</li>
                 </ul>
-                <button class="value-btn" onclick="toggleValue()">나의 기획 가치관 확인하기</button>
+                <button class="value-btn" onclick="toggleValue()">기획 가치관 확인하기</button>
                 <div id="value-text">
-                    데이터는 단순한 숫자가 아니라 '풀어야 할 문제'의 크기를 말해줍니다. 저는 분석 결과가 보고서에 머물지 않고, 실제 사용자의 경험을 개선하는 서비스 시나리오와 실행 전략으로 번역될 때 기획의 마침표가 찍힌다고 믿습니다. 모호한 가능성을 확실한 지표로 증명하는 PM이 되겠습니다.
+                    현상의 의문(<span class="mark">?</span>)을 데이터 분석으로 파고들어 확실한 해결책(<span class="mark">.</span>)을 제시합니다. 
+                    단순한 수치 나열을 넘어, 비즈니스의 마침표가 될 수 있는 실행 전략을 만드는 PM이 되겠습니다.
                 </div>
             </section>
 
@@ -183,11 +193,11 @@
         </div>
 
         <section id="project-display-area">
-            <h2 style="font-size: 1.6rem; margin-bottom: 35px;">The Answers (Results) .</h2>
+            <h2 style="font-size: 1.6rem; margin-bottom: 35px;">The Answers (Results) <span class="mark">.</span></h2>
 
             <div class="card project-card">
                 <span class="role-badge">Founder & Project Lead</span>
-                <h3 class="project-title">SanmanTEC (창업동아리) .</h3>
+                <h3 class="project-title">SanmanTEC (창업동아리) <span class="mark">.</span></h3>
                 <p class="project-subtitle">"디지털 자산의 안전한 승계: 암호화폐 상속 서비스 기획"</p>
                 <ul class="project-details">
                     <li><strong>비즈니스 모델:</strong> 비수탁형(Non-custodial) 모델을 활용한 보안 기반 암호화폐 상속 서비스 기획</li>
@@ -236,7 +246,7 @@
 
             <div class="card project-card">
                 <span class="role-badge">Data Analyst & Planner</span>
-                <h3 class="project-title">국민건강영양조사 기반 건강 생활습관 유형화 프로젝트 .</h3>
+                <h3 class="project-title">국민건강영양조사 기반 건강 생활습관 유형화 프로젝트 <span class="mark">.</span></h3>
                 <p class="project-subtitle">"국민건강영양조사 데이터를 활용한 건강 MBTI 개발과 맞춤형 관리 전략 제시"</p>
                 <ul class="project-details">
                     <li><strong>데이터 활용:</strong> 국민건강영양조사(KNHANES) 데이터를 활용해 정신 건강, 신체 건강, 건강 행동, 경제 환경 지표를 분석</li>
@@ -281,7 +291,7 @@
 
             <div class="card project-card">
                 <span class="role-badge">Undergraduate Researcher</span>
-                <h3 class="project-title">청소년 ECLS 환자의 신경합병증 발생 요인 분석 .</h3>
+                <h3 class="project-title">청소년 ECLS 환자의 신경합병증 발생 요인 분석 <span class="mark">.</span></h3>
                 <p class="project-subtitle">"건강보험공단 대규모 데이터(NHIS)를 활용한 의생명정보학 연구 분석"</p>
                 <ul class="project-details">
                     <li><strong>데이터 기반:</strong> NHIS 자료를 활용해 18세 이하 ECLS 환자 코호트를 구성하고 신경합병증 발생군을 정의</li>
@@ -325,7 +335,7 @@
 
             <div class="card project-card">
                 <span class="role-badge">Data Planner</span>
-                <h3 class="project-title">K리그 팬 여론과 경기력의 상관 구조 분석 .</h3>
+                <h3 class="project-title">K리그 팬 여론과 경기력의 상관 구조 분석 <span class="mark">.</span></h3>
                 <p class="project-subtitle">"유튜브 댓글 데이터와 경기력 지표를 결합한 스포츠 소셜 데이터 분석"</p>
                 <ul class="project-details">
                     <li><strong>데이터 수집:</strong> K리그 2024 시즌 일부 구단의 유튜브 하이라이트 댓글과 공식 경기력 데이터를 수집</li>
@@ -369,7 +379,7 @@
             </div>
         </section>
 
-        <footer><p>© 2026 Choi Huiseok. From ? to . Portfolio</p></footer>
+        <footer><p>© 2026 Choi Huiseok. From <span class="mark">?</span> to <span class="mark">.</span> Portfolio</p></footer>
     </div>
 
     <div class="image-modal" id="modal" onclick="this.classList.remove('active')">
@@ -386,7 +396,11 @@
             q.innerText = '.'; q.style.color = '#2563eb'; q.style.transform = 'scale(1.2)';
             setTimeout(() => {
                 overlay.style.opacity = '0';
-                setTimeout(() => { overlay.style.display = 'none'; content.style.display = 'block'; setTimeout(() => content.style.opacity = '1', 50); }, 800);
+                setTimeout(() => {
+                    overlay.style.display = 'none';
+                    content.style.display = 'block';
+                    setTimeout(() => content.style.opacity = '1', 50);
+                }, 800);
             }, 500);
         }
 
