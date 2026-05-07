@@ -926,6 +926,28 @@
             box-shadow: 0 10px 20px rgba(0,0,0,0.1); 
         }
 
+
+
+        /* 프로젝트별 수상 배지 */
+        .project-award-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 18px 0 24px;
+        }
+
+        .project-award-badges span {
+            display: inline-block;
+            background: rgba(255, 235, 0, 0.25);
+            border: 1px solid rgba(255, 235, 0, 0.75);
+            color: var(--midnight-navy);
+            border-radius: 999px;
+            padding: 10px 16px;
+            font-size: 0.92rem;
+            font-weight: 900;
+            word-break: keep-all;
+        }
+
         footer { 
             text-align: center; 
             padding: 80px 0; 
@@ -1098,6 +1120,10 @@
             <span class="role-badge">Founder & Project Lead</span>
             <h3 class="project-title">SanmanTEC (창업동아리) <span class="mark">.</span></h3>
             <p class="project-subtitle">"디지털 자산의 안전한 승계: 암호화폐 상속 서비스 기획"</p>
+            <div class="project-award-badges">
+                <span>🏆 J-Curve Startup 부트캠프 최우수상</span>
+                <span>🏆 AICOSS 산학협력프로젝트 경진대회 동상</span>
+            </div>
             <ul class="project-details">
                 <li><strong>비즈니스 모델:</strong> 비수탁형(Non-custodial) 모델을 활용한 보안 기반 암호화폐 상속 서비스 기획</li>
                 <li><strong>서비스 설계:</strong> 중앙화 거래소 리스크와 개인키 분실 문제를 정의하고, 피상속인-상속인-관리자 흐름 설계</li>
@@ -1134,6 +1160,9 @@
             <span class="role-badge">Data Analyst & Planner</span>
             <h3 class="project-title">국민건강영양조사 기반 건강 생활습관 유형화 <span class="mark">.</span></h3>
             <p class="project-subtitle">"국민건강영양조사 데이터를 활용한 건강 MBTI 개발과 맞춤형 관리 전략 제시"</p>
+            <div class="project-award-badges">
+                <span>🏆 호남지방통계청 통계분석 경진대회 최우수상</span>
+            </div>
             <ul class="project-details">
                 <li><strong>데이터 활용:</strong> 국민건강영양조사(KNHANES) 데이터를 활용해 정신 건강, 신체 건강, 건강 행동 분석</li>
                 <li><strong>분석 설계:</strong> 건강 관련 컬럼을 주요 기준으로 분류하고, 유형화와 해석이 가능한 분석 프레임워크 구성</li>
@@ -1315,8 +1344,8 @@
         const pptDataStore = [
             { 
                 q: "디지털 자산, 사후 상속은?",
-                processText: "“디지털 자산, 사후 상속은?”이라는 물음표를 수상 아이디어 → 구현 프로젝트 → IR Pitching 경험으로 연결했습니다.",
-                resultText: "“디지털 자산, 사후 상속은?”이라는 물음표를 암호화폐 상속 서비스 기획과 MVP 구현 결과로 마침표 찍었습니다.",
+                processText: "“디지털 자산, 사후 상속은?”이라는 물음표를 수상 아이디어 → SanmanTEC 구현 → 수상 및 IR Pitching 검증 경험으로 연결했습니다.",
+                resultText: "“디지털 자산, 사후 상속은?”이라는 물음표를 암호화폐 상속 서비스 기획, MVP 구현, 수상 및 IR Pitching 경험으로 마침표 찍었습니다.",
                 stages: [
                     {
                         label: "01 IDEA",
@@ -1330,11 +1359,11 @@
                     },
                     {
                         label: "03 VALIDATION",
-                        title: "창업지원사업 IR Pitching",
-                        desc: "아이템을 바탕으로 창업지원사업에 지원해 서류 평가를 통과했으며, IR Pitching 과정에서 시장성, 법적 리스크, 구현 가능성에 대한 외부 피드백을 받았습니다."
+                        title: "수상 및 창업지원사업 검증",
+                        desc: "J-Curve Startup 부트캠프 최우수상과 AICOSS 산학협력프로젝트 경진대회 동상을 수상하며 아이디어와 구현 가능성을 외부에서 검증받았습니다. 이후 창업지원사업 서류 평가를 통과하고 IR Pitching 과정에서 시장성, 법적 리스크, 구현 가능성에 대한 피드백을 받았습니다."
                     }
                 ],
-                tags: ["아이디어 제안", "서비스 기획", "Figma UI/UX", "유스케이스 작성", "법률 멘토링 반영", "개발 요구사항 정리", "IR Pitching 준비"],
+                tags: ["아이디어 제안", "서비스 기획", "J-Curve 최우수상", "AICOSS 동상", "Figma UI/UX", "유스케이스 작성", "법률 멘토링 반영", "IR Pitching 준비"],
                 processImages: [
                     { src: "images/sanmantec-award.png", caption: "J-Curve Startup 부트캠프 최우수상" },
                     { src: "images/sanmantec-figma.png", caption: "Figma 기반 UI/UX 설계" },
@@ -1343,8 +1372,8 @@
             },
             { 
                 q: "국민 건강, 유형화될까?",
-                processText: "“국민 건강, 유형화될까?”라는 물음표를 대규모 공공데이터 분석 설계 → 건강 유형화 → 유형별 관리 전략 도출 과정으로 연결했습니다.",
-                resultText: "“국민 건강, 유형화될까?”라는 물음표를 건강 유형화 분석과 맞춤형 관리 전략으로 마침표 찍었습니다.",
+                processText: "“국민 건강, 유형화될까?”라는 물음표를 대규모 공공데이터 분석 설계 → 건강 유형화 → 통계분석 경진대회 최우수상 성과로 연결했습니다.",
+                resultText: "“국민 건강, 유형화될까?”라는 물음표를 건강 유형화 분석, 맞춤형 관리 전략, 통계분석 경진대회 최우수상으로 마침표 찍었습니다.",
                 stages: [
                     {
                         label: "01 IDEA",
@@ -1358,11 +1387,11 @@
                     },
                     {
                         label: "03 RESULT",
-                        title: "군집별 특성 도출 및 해석",
-                        desc: "클러스터링으로 나누어진 건강 유형을 기준으로 회귀분석을 진행해 유형별 부족한 건강 요인과 관리 방향을 도출하고, 맞춤형 건강관리 전략으로 정리했습니다."
+                        title: "건강 유형 도출 및 외부 성과",
+                        desc: "클러스터링과 회귀분석을 통해 건강 유형별 부족한 요인과 관리 방향을 도출했습니다. 해당 분석 결과는 호남지방통계청 통계분석 경진대회에서 최우수상을 수상하며 분석의 완성도와 활용 가능성을 인정받았습니다."
                     }
                 ],
-                tags: ["아이디어 제안", "공공데이터 분석", "분석 프레임워크 설계", "컬럼 기준 분류", "K-Means 클러스터링", "회귀분석", "유형별 해석"],
+                tags: ["아이디어 제안", "공공데이터 분석", "분석 프레임워크 설계", "K-Means 클러스터링", "회귀분석", "유형별 해석", "통계분석 경진대회 최우수상"],
                 processImages: [
                     { src: "images/health-domain.png", caption: "분석 도메인 설계" },
                     { src: "images/health-clustering.png", caption: "건강 행동 클러스터링" },
