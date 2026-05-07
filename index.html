@@ -1428,30 +1428,30 @@
             },
             { 
                 q: "K리그 여론, 경기력과 관계는?",
-                processText: "“K리그 여론, 경기력과 관계는?”이라는 물음표를 댓글 수집 → 팬 여론 수치화 → 경기력 지표와의 상관 분석 과정으로 연결했습니다.",
-                resultText: "“K리그 여론, 경기력과 관계는?”이라는 물음표를 팬 여론과 경기력의 상관 구조 분석 결과로 마침표 찍었습니다.",
+                processText: "“K리그 팬들의 팀 평가는 실제 경기력과 관련이 있을까?”라는 물음표를 댓글 데이터 수집 → 팬 여론 수치화 → 경기력 지표 축소 → 상관분석 과정으로 연결했습니다.",
+                resultText: "“K리그 팬 여론은 실제 경기력과 관계가 있을까?”라는 물음표를 소셜 데이터와 경기력 데이터의 상관 구조 분석 결과로 마침표 찍었습니다.",
                 stages: [
                     {
-                        label: "01 COLLECT",
-                        title: "팬 댓글 데이터 수집",
-                        desc: "K리그 유튜브 하이라이트 댓글과 공식 경기력 데이터를 수집해 팬 여론과 경기력 지표를 함께 분석할 기반을 만들었습니다."
+                        label: "01 QUESTION",
+                        title: "팬 여론과 경기력 관계에 대한 의문 제시",
+                        desc: "K리그 팬들이 유튜브 댓글을 통해 표현하는 팀에 대한 평가가 실제 경기력 지표와 관련이 있을까라는 의문에서 프로젝트를 시작했습니다."
                     },
                     {
-                        label: "02 MODELING",
-                        title: "비정형 댓글 수치화",
-                        desc: "BERTopic 기반 토픽 모델링과 LLM 기반 감정점수화를 활용해 댓글 데이터를 분석 가능한 지표로 변환했습니다."
+                        label: "02 FRAMEWORK",
+                        title: "댓글 데이터와 경기력 데이터 결합 설계",
+                        desc: "K리그 유튜브 하이라이트 댓글 데이터와 공식 경기력 데이터를 함께 수집하고, 팬 여론과 경기력 지표를 비교할 수 있는 데이터 분석 프레임워크를 설계했습니다."
                     },
                     {
-                        label: "03 INSIGHT",
-                        title: "상관 구조 분석",
-                        desc: "PCA로 경기력 지표를 축소하고, 팬 감정 지표와의 상관관계를 분석해 팀별 반응 차이를 해석했습니다."
+                        label: "03 ANALYSIS",
+                        title: "여론 수치화 및 상관분석 수행",
+                        desc: "BERTopic으로 댓글 토픽을 군집화하고 감정점수를 부여해 팬 여론을 수치화했습니다. 이후 경기력 지표는 PCA로 축소한 뒤, 팬 여론 지표와 상관분석을 진행했습니다."
                     }
                 ],
-                tags: ["유튜브 댓글 수집", "BERTopic", "LLM 감정점수화", "PCA", "상관분석", "스포츠 데이터", "여론 분석"],
+                tags: ["아이디어 제안", "데이터 프레임워크 설계", "유튜브 댓글 수집", "BERTopic", "감정점수화", "PCA 분석", "상관분석"],
                 processImages: [
-                    { src: "images/kleague-data.png", caption: "유튜브 댓글 데이터 수집" },
-                    { src: "images/kleague-method.png", caption: "BERTopic 기반 토픽 모델링" },
-                    { src: "images/kleague-result.png", caption: "팀별 팬 여론 구조 비교" }
+                    { src: "images/kleague-data.png", caption: "K리그 댓글 및 경기력 데이터 수집" },
+                    { src: "images/kleague-method.png", caption: "BERTopic 기반 팬 여론 수치화" },
+                    { src: "images/kleague-result.png", caption: "팬 여론과 경기력 상관분석" }
                 ]
             }
         ];
