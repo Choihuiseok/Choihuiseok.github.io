@@ -71,6 +71,19 @@
         .info-list li { margin-bottom: 12px; font-size: 1.05rem; padding-left: 30px; position: relative; word-break: keep-all; }
         .info-list li::before { content: "📍"; position: absolute; left: 0; }
 
+
+        /* ===== 📍 About Me 물음표 클릭 공개 ===== */
+        #about-content { display: none; animation: aboutFadeIn 0.45s ease; }
+        .about-reveal-box {
+            min-height: 360px; display: flex; flex-direction: column; align-items: center; justify-content: center;
+            gap: 18px; background: #fcfcfd; border: 1px dashed #d0d5dd; border-radius: 22px; cursor: pointer;
+            transition: 0.3s; text-align: center; padding: 30px;
+        }
+        .about-reveal-box:hover { transform: translateY(-4px); border-color: var(--kakao-yellow); box-shadow: 0 12px 24px rgba(16, 24, 40, 0.08); }
+        .about-reveal-q { font-size: 5rem; font-weight: 900; color: var(--kakao-yellow); line-height: 1; text-shadow: 0 3px 0 var(--midnight-navy); }
+        .about-reveal-text { font-size: 1rem; font-weight: 800; color: var(--midnight-navy); }
+        @keyframes aboutFadeIn { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+
         /* 📍 질문 카드 그리드 레이아웃 고정 (2x2 가로 배치) */
         .q-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; height: 100%; }
         .q-item { 
@@ -234,26 +247,32 @@
         <div class="top-layout">
             <section class="card">
                 <h2>About Me</h2>
-                <div class="info-grid">
-                    <div class="info-item"><span>University</span><strong>전남대학교</strong></div>
-                    <div class="info-item"><span>Major</span><strong>빅데이터융합학과 4학년</strong></div>
-                    <div class="info-item"><span>Birth</span><strong id="live-counter">0d 0h 0m 0s</strong></div>
-                    <div class="info-item">
-                        <span>Focus</span>
-                        <div class="focus-container">
-                            <span class="mark">?</span><span>→</span><span class="mark">.</span>
+                <div id="about-reveal-box" class="about-reveal-box" onclick="revealAboutMe()">
+                    <div class="about-reveal-q">?</div>
+                    <p class="about-reveal-text">물음표를 눌러 About Me 보기</p>
+                </div>
+                <div id="about-content">
+                    <div class="info-grid">
+                        <div class="info-item"><span>University</span><strong>전남대학교</strong></div>
+                        <div class="info-item"><span>Major</span><strong>빅데이터융합학과 4학년</strong></div>
+                        <div class="info-item"><span>Birth</span><strong id="live-counter">0d 0h 0m 0s</strong></div>
+                        <div class="info-item">
+                            <span>Focus</span>
+                            <div class="focus-container">
+                                <span class="mark">?</span><span>→</span><span class="mark">.</span>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <ul class="info-list">
-                    <li>전남대학교 빅데이터융합학과 4학년 재학 (2021.03 ~ 2027.02 예정)</li>
-                    <li>전남대학교 의료생명정보학 연구실 학부연구생 (2025.05 ~ 2026.04)</li>
-                    <li>전남대학교 SanmanTEC AI창업동아리 회장(2025.04 ~ 2026. 08)</li>
-                    <li>전남대학교 빅데이터융합학과 학생회 사무부장(2021.04 ~ 2022.02)</li>
-                </ul>
-                <button class="value-btn" style="background:var(--midnight-navy); color:#fff; border:none; padding:15px; border-radius:14px; width:100%; margin-top:20px; font-weight:800; cursor:pointer;" onclick="toggleValue()">기획 가치관 확인하기</button>
-                <div id="value-text" style="display:none; margin-top:20px; padding:25px; background:#f9fafb; border-left:5px solid var(--kakao-yellow); font-size:1rem; line-height:1.8; color: #344054;">
-                    현상의 의문(<span class="mark">?</span>)을 데이터 분석으로 파고들어 확실한 해결책(<span class="mark">.</span>)을 제시합니다. 단순한 수치 나열을 넘어, 비즈니스의 마침표가 될 수 있는 실행 전략을 만드는 PM이 되겠습니다.
+                    <ul class="info-list">
+                        <li>전남대학교 빅데이터융합학과 4학년 재학 (2021.03 ~ 2027.02 예정)</li>
+                        <li>전남대학교 의료생명정보학 연구실 학부연구생 (2025.05 ~ 2026.04)</li>
+                        <li>전남대학교 SanmanTEC AI창업동아리 회장(2025.04 ~ 2026. 08)</li>
+                        <li>전남대학교 빅데이터융합학과 학생회 사무부장(2021.04 ~ 2022.02)</li>
+                    </ul>
+                    <button class="value-btn" style="background:var(--midnight-navy); color:#fff; border:none; padding:15px; border-radius:14px; width:100%; margin-top:20px; font-weight:800; cursor:pointer;" onclick="toggleValue()">기획 가치관 확인하기</button>
+                    <div id="value-text" style="display:none; margin-top:20px; padding:25px; background:#f9fafb; border-left:5px solid var(--kakao-yellow); font-size:1rem; line-height:1.8; color: #344054;">
+                        현상의 의문(<span class="mark">?</span>)을 데이터 분석으로 파고들어 확실한 해결책(<span class="mark">.</span>)을 제시합니다. 단순한 수치 나열을 넘어, 비즈니스의 마침표가 될 수 있는 실행 전략을 만드는 PM이 되겠습니다.
+                    </div>
                 </div>
             </section>
 
@@ -515,6 +534,12 @@
         }, 1000);
 
         function toggleValue() { const v = document.getElementById('value-text'); v.style.display = (v.style.display === 'block') ? 'none' : 'block'; }
+
+
+        function revealAboutMe() {
+            document.getElementById('about-reveal-box').style.display = 'none';
+            document.getElementById('about-content').style.display = 'block';
+        }
 
         // PPT 쇼 데이터 및 로직
         const pptDataStore = [
