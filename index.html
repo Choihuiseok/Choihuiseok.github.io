@@ -58,6 +58,13 @@
             font-weight: 700; 
             letter-spacing: 1px; 
         }
+        #click-sub-hint {
+            color: rgba(255,255,255,0.45);
+            margin-top: 8px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
 
         /* ===== 메인 콘텐츠 영역 ===== */
         #main-content { 
@@ -1000,10 +1007,11 @@
 </head>
 <body>
 
-    <div id="intro-overlay" onclick="handleIntroClick()">
-        <div id="big-q">?</div>
-        <p id="click-hint">Huiseok's Portfolio</p>
-    </div>
+<div id="intro-overlay" onclick="handleIntroClick()">
+    <div id="big-q">?</div>
+    <p id="click-hint">물음표를 누르면, 마침표가 보입니다.</p>
+    <p id="click-sub-hint">Click to start Huiseok's Portfolio</p>
+</div>
 
     <div id="main-content">
         <header>
