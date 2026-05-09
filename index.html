@@ -902,6 +902,113 @@
         }
 
 
+        /* ===== K리그 전용: 발표 사진 2장 + 데이터 결합 프레임워크 카드 ===== */
+        .kleague-framework-card {
+            background: #ffffff;
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid #eaecf0;
+            min-height: 260px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .kleague-framework-header {
+            padding: 16px 18px;
+            border-bottom: 1px solid #eaecf0;
+            background: #fcfcfd;
+        }
+
+        .kleague-framework-header span {
+            display: inline-block;
+            font-size: 0.72rem;
+            font-weight: 900;
+            letter-spacing: 1.2px;
+            color: var(--blue-accent);
+            margin-bottom: 4px;
+        }
+
+        .kleague-framework-header h4 {
+            font-size: 1.05rem;
+            font-weight: 900;
+            color: var(--midnight-navy);
+            word-break: keep-all;
+        }
+
+        .kleague-data-bridge {
+            padding: 18px;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 12px;
+        }
+
+        .kleague-stream {
+            border: 1px solid #eaecf0;
+            border-radius: 16px;
+            overflow: hidden;
+            background: #ffffff;
+        }
+
+        .kleague-stream-title {
+            background: #f9fafb;
+            border-bottom: 1px solid #eaecf0;
+            padding: 9px 12px;
+            font-size: 0.78rem;
+            font-weight: 900;
+            color: var(--midnight-navy);
+        }
+
+        .kleague-stream-body {
+            padding: 11px 12px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 7px;
+            color: #344054;
+        }
+
+        .kleague-chip {
+            display: inline-block;
+            background: rgba(16,24,40,0.06);
+            border: 1px solid rgba(16,24,40,0.08);
+            border-radius: 999px;
+            padding: 6px 9px;
+            font-size: 0.74rem;
+            font-weight: 850;
+            white-space: nowrap;
+        }
+
+        .kleague-arrow-small {
+            color: var(--blue-accent);
+            font-weight: 900;
+            font-size: 0.9rem;
+        }
+
+        .kleague-final-box {
+            margin: 0 18px 18px;
+            background: var(--midnight-navy);
+            color: white;
+            border-radius: 16px;
+            padding: 14px;
+            text-align: center;
+        }
+
+        .kleague-final-box strong {
+            display: block;
+            color: var(--kakao-yellow);
+            font-size: 0.9rem;
+            font-weight: 900;
+            margin-bottom: 3px;
+        }
+
+        .kleague-final-box p {
+            font-size: 0.78rem;
+            line-height: 1.45;
+            color: rgba(255,255,255,0.82);
+            word-break: keep-all;
+        }
+
+
         /* ===== 슬라이드 이미지 확대 보기 ===== */
         #ppt-overlay img {
             cursor: zoom-in;
@@ -1888,6 +1995,7 @@
                 questionKeywords: ["유튜브 댓글", "비정형 데이터", "팬 여론", "감정점수화", "PCA", "상관분석"],
                 processText: "“K리그 팬들의 팀 평가는 실제 경기력과 관련이 있을까?”라는 물음표를 댓글 데이터 수집 → 팬 여론 수치화 → 경기력 지표 축소 → 상관분석 과정으로 연결했습니다.",
                 resultText: "“K리그 팬 여론은 실제 경기력과 관계가 있을까?”라는 물음표를 소셜 데이터와 경기력 데이터의 상관 구조 분석 결과로 마침표 찍었습니다.",
+                customProcessVisual: "kleagueFramework",
                 stages: [
                     {
                         label: "01 QUESTION",
@@ -1905,11 +2013,10 @@
                         desc: "BERTopic으로 댓글 토픽을 군집화하고 감정점수를 부여해 팬 여론을 수치화했습니다. 이후 경기력 지표는 PCA로 축소한 뒤, 팬 여론 지표와 상관분석을 진행했습니다."
                     }
                 ],
-                tags: ["아이디어 제안", "데이터 프레임워크 설계", "유튜브 댓글 수집", "BERTopic", "감정점수화", "PCA 분석", "상관분석"],
+                tags: ["아이디어 제안", "데이터 프레임워크 설계", "발표 경험", "포스터 발표", "BERTopic", "감정점수화", "PCA 분석", "상관분석"],
                 processImages: [
-                    { src: "images/kleague-data.png", caption: "K리그 댓글 및 경기력 데이터 수집" },
-                    { src: "images/kleague-method.png", caption: "BERTopic 기반 팬 여론 수치화" },
-                    { src: "images/kleague-result.png", caption: "팬 여론과 경기력 상관분석" }
+                    { src: "images/kleague-presentation.png", caption: "비정형 댓글 데이터를 경기력 분석으로 연결한 발표 과정" },
+                    { src: "images/kleague-poster.png", caption: "K리그 팬 여론 분석 프레임워크 포스터 발표" }
                 ]
             }
         ];
@@ -2049,6 +2156,60 @@
                                 <li><em>04</em><span>생존분석 테이블</span></li>
                             </ul>
                             <p class="research-flow-caption">발생군 분류와 사건 변수 구성</p>
+                        </div>
+                    </div>
+                `;
+            } else if (data.customProcessVisual === "kleagueFramework") {
+                processVisual.innerHTML = `
+                    <div class="process-image-row">
+                        <div class="process-image-card">
+                            <img src="${data.processImages[0].src}" alt="${data.processImages[0].caption}">
+                            <p>${data.processImages[0].caption}</p>
+                        </div>
+
+                        <div class="process-image-card">
+                            <img src="${data.processImages[1].src}" alt="${data.processImages[1].caption}">
+                            <p>${data.processImages[1].caption}</p>
+                        </div>
+
+                        <div class="kleague-framework-card">
+                            <div class="kleague-framework-header">
+                                <span>DATA BRIDGE FRAMEWORK</span>
+                                <h4>비정형 댓글 데이터와 경기력 데이터 연결 구조</h4>
+                            </div>
+
+                            <div class="kleague-data-bridge">
+                                <div class="kleague-stream">
+                                    <div class="kleague-stream-title">Fan Comment Data</div>
+                                    <div class="kleague-stream-body">
+                                        <span class="kleague-chip">YouTube 댓글</span>
+                                        <span class="kleague-arrow-small">→</span>
+                                        <span class="kleague-chip">BERTopic</span>
+                                        <span class="kleague-arrow-small">→</span>
+                                        <span class="kleague-chip">감정점수화</span>
+                                        <span class="kleague-arrow-small">→</span>
+                                        <span class="kleague-chip">팬 여론 지표</span>
+                                    </div>
+                                </div>
+
+                                <div class="kleague-stream">
+                                    <div class="kleague-stream-title">Performance Data</div>
+                                    <div class="kleague-stream-body">
+                                        <span class="kleague-chip">경기력 지표</span>
+                                        <span class="kleague-arrow-small">→</span>
+                                        <span class="kleague-chip">PCA</span>
+                                        <span class="kleague-arrow-small">→</span>
+                                        <span class="kleague-chip">요인 축소</span>
+                                        <span class="kleague-arrow-small">→</span>
+                                        <span class="kleague-chip">경기력 요인</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="kleague-final-box">
+                                <strong>Correlation Analysis</strong>
+                                <p>팬 여론 지표와 경기력 요인을 연결해 댓글 반응이 의미 있는 데이터인지 검증</p>
+                            </div>
                         </div>
                     </div>
                 `;
