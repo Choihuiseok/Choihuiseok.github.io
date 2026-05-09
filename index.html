@@ -584,6 +584,170 @@
             word-break: keep-all;
         }
 
+
+
+        /* ===== 건강유형화 전용: 피처 분류 기반 분석 프레임워크 + 수상사진 2분할 ===== */
+        .process-image-row.two-col {
+            grid-template-columns: 1.35fr 1fr;
+            align-items: stretch;
+        }
+
+        .framework-design-card {
+            background: #ffffff;
+            border: 1px solid #eaecf0;
+            border-radius: 20px;
+            overflow: hidden;
+            min-height: 300px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .framework-card-header {
+            padding: 18px 20px;
+            border-bottom: 1px solid #eaecf0;
+            background: #fcfcfd;
+        }
+
+        .framework-card-header span {
+            display: inline-block;
+            font-size: 0.72rem;
+            font-weight: 900;
+            letter-spacing: 1.2px;
+            color: var(--blue-accent);
+            margin-bottom: 4px;
+        }
+
+        .framework-card-header h4 {
+            font-size: 1.1rem;
+            font-weight: 900;
+            color: var(--midnight-navy);
+            margin-bottom: 4px;
+            word-break: keep-all;
+        }
+
+        .framework-card-header p {
+            font-size: 0.82rem;
+            color: #667085;
+            line-height: 1.5;
+            word-break: keep-all;
+        }
+
+        .feature-group-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            padding: 18px 20px;
+        }
+
+        .feature-group-card {
+            background: #f9fafb;
+            border: 1px solid #eaecf0;
+            border-radius: 16px;
+            padding: 14px;
+        }
+
+        .feature-group-card span {
+            display: inline-block;
+            font-size: 0.72rem;
+            font-weight: 900;
+            color: var(--blue-accent);
+            margin-bottom: 6px;
+        }
+
+        .feature-group-card h5 {
+            font-size: 0.95rem;
+            font-weight: 900;
+            color: var(--midnight-navy);
+            margin-bottom: 5px;
+        }
+
+        .feature-group-card p {
+            font-size: 0.78rem;
+            line-height: 1.45;
+            color: #475467;
+            word-break: keep-all;
+        }
+
+        .analysis-pipeline {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr auto 1fr;
+            align-items: center;
+            gap: 10px;
+            padding: 0 20px 20px;
+        }
+
+        .pipeline-step {
+            background: var(--midnight-navy);
+            color: white;
+            border-radius: 16px;
+            padding: 14px 12px;
+            text-align: center;
+            min-height: 86px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .pipeline-step strong {
+            display: block;
+            font-size: 0.86rem;
+            font-weight: 900;
+            color: var(--kakao-yellow);
+            margin-bottom: 5px;
+        }
+
+        .pipeline-step p {
+            font-size: 0.74rem;
+            line-height: 1.35;
+            color: rgba(255,255,255,0.82);
+            word-break: keep-all;
+        }
+
+        .pipeline-arrow {
+            color: var(--midnight-navy);
+            font-size: 1.25rem;
+            font-weight: 900;
+        }
+
+        .framework-note {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            padding: 0 20px 20px;
+        }
+
+        .framework-note span {
+            display: inline-block;
+            background: rgba(255, 235, 0, 0.25);
+            border: 1px solid rgba(255, 235, 0, 0.75);
+            border-radius: 999px;
+            padding: 7px 10px;
+            font-size: 0.74rem;
+            font-weight: 800;
+            color: var(--midnight-navy);
+        }
+
+        .process-image-card.award-photo img {
+            height: 300px;
+            object-fit: cover;
+        }
+
+        @media (max-width: 1000px) {
+            .analysis-pipeline {
+                grid-template-columns: 1fr;
+            }
+
+            .pipeline-arrow {
+                transform: rotate(90deg);
+                text-align: center;
+            }
+
+            .feature-group-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
         /* PPT 3단계: 결과 마침표 스크롤형 */
         .ppt-result-wrap {
             width: 100%;
@@ -1382,6 +1546,7 @@
                 q: "국민 건강, 유형화될까?",
                 processText: "“국민 건강, 유형화될까?”라는 물음표를 대규모 공공데이터 분석 설계 → 건강 유형화 → 통계분석 경진대회 최우수상 성과로 연결했습니다.",
                 resultText: "“국민 건강, 유형화될까?”라는 물음표를 건강 유형화 분석, 맞춤형 관리 전략, 통계분석 경진대회 최우수상으로 마침표 찍었습니다.",
+                customProcessVisual: "healthDataframe",
                 stages: [
                     {
                         label: "01 IDEA",
@@ -1399,12 +1564,8 @@
                         desc: "클러스터링과 회귀분석을 통해 건강 유형별 부족한 요인과 관리 방향을 도출했습니다. 해당 분석 결과는 호남지방통계청 통계분석 경진대회에서 최우수상을 수상하며 분석의 완성도와 활용 가능성을 인정받았습니다."
                     }
                 ],
-                tags: ["아이디어 제안", "공공데이터 분석", "분석 프레임워크 설계", "K-Means 클러스터링", "회귀분석", "유형별 해석", "통계분석 경진대회 최우수상"],
-                processImages: [
-                    { src: "images/health-domain.png", caption: "분석 도메인 설계" },
-                    { src: "images/health-clustering.png", caption: "건강 행동 클러스터링" },
-                    { src: "images/health-award.png", caption: "호남 통계청장 최우수상" }
-                ]
+                tags: ["아이디어 제안", "공공데이터 분석", "컬럼·피처 기준 분류", "분석 프레임워크 설계", "K-Means 클러스터링", "회귀분석", "통계분석 경진대회 발표"],
+                processImages: []
             },
             { 
                 q: "청소년 합병증, 예측 가능할까?",
@@ -1492,16 +1653,85 @@
 
             tags.innerHTML = data.tags.map(tag => `<span>${tag}</span>`).join('');
 
-            processVisual.innerHTML = `
-                <div class="process-image-row">
-                    ${data.processImages.map(img => `
-                        <div class="process-image-card">
-                            <img src="${img.src}" alt="${img.caption}">
-                            <p>${img.caption}</p>
+            if (data.customProcessVisual === "healthDataframe") {
+                processVisual.innerHTML = `
+                    <div class="process-image-row two-col">
+                        <div class="framework-design-card">
+                            <div class="framework-card-header">
+                                <span>ANALYSIS FRAMEWORK</span>
+                                <h4>컬럼·피처 분류 기반 건강 유형화 프레임워크</h4>
+                                <p>국민건강영양조사 원자료의 컬럼을 4가지 기준으로 분류하고, 기준별 피처 묶음을 활용해 K-Means 군집화와 회귀분석을 연결했습니다.</p>
+                            </div>
+
+                            <div class="feature-group-grid">
+                                <div class="feature-group-card">
+                                    <span>01 FEATURE GROUP</span>
+                                    <h5>정신 건강</h5>
+                                    <p>우울감 · 스트레스 · 수면 · 주관적 건강</p>
+                                </div>
+
+                                <div class="feature-group-card">
+                                    <span>02 FEATURE GROUP</span>
+                                    <h5>신체 건강</h5>
+                                    <p>BMI · 혈압 · 혈당 · 만성질환</p>
+                                </div>
+
+                                <div class="feature-group-card">
+                                    <span>03 FEATURE GROUP</span>
+                                    <h5>건강 행동</h5>
+                                    <p>흡연 · 음주 · 운동 · 식습관</p>
+                                </div>
+
+                                <div class="feature-group-card">
+                                    <span>04 FEATURE GROUP</span>
+                                    <h5>생활 환경</h5>
+                                    <p>소득 · 교육수준 · 직업 · 생활 조건</p>
+                                </div>
+                            </div>
+
+                            <div class="analysis-pipeline">
+                                <div class="pipeline-step">
+                                    <strong>Feature Set</strong>
+                                    <p>4가지 기준별 변수 묶음 구성</p>
+                                </div>
+                                <div class="pipeline-arrow">→</div>
+                                <div class="pipeline-step">
+                                    <strong>K-Means</strong>
+                                    <p>기준별 건강 생활습관 군집화</p>
+                                </div>
+                                <div class="pipeline-arrow">→</div>
+                                <div class="pipeline-step">
+                                    <strong>Regression</strong>
+                                    <p>군집 기준 부족 요인 해석</p>
+                                </div>
+                            </div>
+
+                            <div class="framework-note">
+                                <span>컬럼 기준 분류</span>
+                                <span>피처셋 구성</span>
+                                <span>군집 기반 유형화</span>
+                                <span>회귀분석 해석</span>
+                            </div>
                         </div>
-                    `).join('')}
-                </div>
-            `;
+
+                        <div class="process-image-card award-photo">
+                            <img src="images/통계청장상.jpg" alt="호남지방통계청 통계분석 경진대회 최우수상">
+                            <p>건강 유형화 분석 결과를 경진대회에서 발표하고 외부 평가를 받은 경험</p>
+                        </div>
+                    </div>
+                `;
+            } else {
+                processVisual.innerHTML = `
+                    <div class="process-image-row">
+                        ${data.processImages.map(img => `
+                            <div class="process-image-card">
+                                <img src="${img.src}" alt="${img.caption}">
+                                <p>${img.caption}</p>
+                            </div>
+                        `).join('')}
+                    </div>
+                `;
+            }
 
             resultView.innerHTML = document.getElementById(`raw-${idx}`).outerHTML;
 
