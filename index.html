@@ -820,6 +820,88 @@
 
 
 
+
+
+        /* ===== ECMO 전용: NHIS 방문 + 연구 수행 과정 카드 ===== */
+        .research-process-card {
+            background: #ffffff;
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid #eaecf0;
+            min-height: 260px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .research-card-header {
+            padding: 16px 18px;
+            border-bottom: 1px solid #eaecf0;
+            background: #fcfcfd;
+        }
+
+        .research-card-header span {
+            display: inline-block;
+            font-size: 0.72rem;
+            font-weight: 900;
+            letter-spacing: 1.2px;
+            color: var(--blue-accent);
+            margin-bottom: 4px;
+        }
+
+        .research-card-header h4 {
+            font-size: 1.05rem;
+            font-weight: 900;
+            color: var(--midnight-navy);
+            word-break: keep-all;
+        }
+
+        .research-flow-list {
+            list-style: none;
+            padding: 16px 18px 14px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .research-flow-list li {
+            display: grid;
+            grid-template-columns: 32px 1fr;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.84rem;
+            font-weight: 850;
+            color: #344054;
+            word-break: keep-all;
+            line-height: 1.35;
+        }
+
+        .research-flow-list li em {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: var(--midnight-navy);
+            color: var(--kakao-yellow);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-style: normal;
+            font-size: 0.78rem;
+            font-weight: 900;
+        }
+
+        .research-flow-caption {
+            margin-top: auto;
+            padding: 13px;
+            font-size: 0.9rem;
+            font-weight: 900;
+            text-align: center;
+            color: var(--midnight-navy);
+            border-top: 1px solid #eaecf0;
+            background: #ffffff;
+            word-break: keep-all;
+        }
+
+
         /* ===== 슬라이드 이미지 확대 보기 ===== */
         #ppt-overlay img {
             cursor: zoom-in;
@@ -1771,28 +1853,29 @@
             },
             { 
                 q: "청소년 합병증, 예측 가능할까?",
-                questionDescription: "ECLS를 시행한 청소년 환자 중 일부는 이후 신경합병증을 경험합니다. 신경합병증이 시행 전 기저질환과 관련이 있는지, 시행 당시 질병이나 중증도와 더 관련이 있는지, 그리고 사망에는 어떤 질환과 특성이 연결되는지 확인하고자 했습니다.",
+                questionDescription: "ECLS를 시행한 청소년 환자에게 신경합병증은 왜 발생할까? 시행 전 기저질환, 시행 당시 질병, 사망 위험과의 관련성을 NHIS 자료로 확인하고자 했습니다.",
                 questionKeywords: ["청소년 ECLS", "신경합병증", "기저질환", "사망 위험", "생존분석"],
-                processText: "“청소년 ECLS 환자의 신경합병증은 예측 가능할까?”라는 물음표를 학부연구생 연구 수행 → NHIS 빅데이터실 분석 → 기초통계 및 생존분석 과정으로 연결했습니다.",
+                processText: "“청소년 ECLS 환자의 신경합병증은 왜 발생할까?”라는 물음표를 연구 참여 → NHIS 코호트 구축 → 기초통계·생존분석 과정으로 연결했습니다.",
                 resultText: "“청소년 합병증, 예측 가능할까?”라는 물음표를 청소년 ECLS 환자의 신경합병증 발생 및 예후 분석 결과로 마침표 찍었습니다.",
+                customProcessVisual: "ecmoResearchFlow",
                 stages: [
                     {
                         label: "01 RESEARCH",
                         title: "학부연구생 연구 주제 수행",
-                        desc: "의생명정보학 연구실 학부연구생으로 활동하며 청소년 ECLS 환자의 신경합병증 발생과 예후를 분석하는 연구 주제를 부여받아 수행했습니다."
+                        desc: "의생명정보학 연구실 학부연구생으로 청소년 ECLS 환자의 신경합병증·예후 분석 연구에 참여했습니다."
                     },
                     {
                         label: "02 COHORT",
                         title: "NHIS 기반 분석 대상자 구축",
-                        desc: "건강보험공단 빅데이터실에 직접 방문해 NHIS 자료를 분석하고, 청소년 ECLS 환자 코호트와 신경합병증 발생군·미발생군 분석 테이블을 구축했습니다."
+                        desc: "건강보험공단 빅데이터실에서 NHIS 자료를 분석하고, 청소년 ECLS 환자 코호트를 구축했습니다."
                     },
                     {
                         label: "03 ANALYSIS",
                         title: "기초통계 및 생존분석 수행",
-                        desc: "신경합병증 발생 여부에 따른 기초통계분석을 진행하고, 사망 및 신경합병증 발생을 주요 사건으로 설정해 생존분석을 수행했습니다."
+                        desc: "신경합병증 발생 여부와 사망을 사건으로 설정해 기초통계와 생존분석을 수행했습니다."
                     }
                 ],
-                tags: ["학부연구생", "NHIS 데이터 분석", "건강보험공단 빅데이터실", "코호트 구축", "발생군·미발생군 분류", "기초통계분석", "생존분석", "SAS 분석"],
+                tags: ["학부연구생", "NHIS 데이터 분석", "코호트 구축", "발생군·미발생군 분류", "기초통계", "생존분석", "SAS"],
                 processImages: [
                     { src: "images/ecmo-cohort.png", caption: "청소년 ECLS 환자 코호트 구성" },
                     { src: "images/ecmo-baseline.png", caption: "신경합병증 발생 여부별 기초통계" },
@@ -1929,6 +2012,43 @@
                         <div class="process-image-card award-photo">
                             <img src="images/통계청장상.jpg" alt="호남지방통계청 통계분석 경진대회 최우수상">
                             <p>건강 유형화 분석 결과를 경진대회에서 발표하고 외부 평가를 받은 경험</p>
+                        </div>
+                    </div>
+                `;
+            } else if (data.customProcessVisual === "ecmoResearchFlow") {
+                processVisual.innerHTML = `
+                    <div class="process-image-row">
+                        <div class="process-image-card">
+                            <img src="images/ecmo-nhis-building.jpg" alt="건강보험공단 빅데이터실 방문">
+                            <p>건강보험공단 빅데이터실에서 NHIS 자료 분석</p>
+                        </div>
+
+                        <div class="research-process-card">
+                            <div class="research-card-header">
+                                <span>RESEARCH PROCESS</span>
+                                <h4>연구 수행 흐름</h4>
+                            </div>
+                            <ul class="research-flow-list">
+                                <li><em>01</em><span>연구 주제 부여</span></li>
+                                <li><em>02</em><span>NHIS 자료 분석</span></li>
+                                <li><em>03</em><span>청소년 ECLS 대상자 정의</span></li>
+                                <li><em>04</em><span>기초통계·생존분석</span></li>
+                            </ul>
+                            <p class="research-flow-caption">연구 주제 수행 과정</p>
+                        </div>
+
+                        <div class="research-process-card">
+                            <div class="research-card-header">
+                                <span>TABLE DESIGN</span>
+                                <h4>분석 테이블 설계</h4>
+                            </div>
+                            <ul class="research-flow-list">
+                                <li><em>01</em><span>청소년 ECLS 코호트</span></li>
+                                <li><em>02</em><span>발생군 / 미발생군</span></li>
+                                <li><em>03</em><span>사망·추적기간 변수</span></li>
+                                <li><em>04</em><span>생존분석 테이블</span></li>
+                            </ul>
+                            <p class="research-flow-caption">발생군 분류와 사건 변수 구성</p>
                         </div>
                     </div>
                 `;
