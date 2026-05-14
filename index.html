@@ -289,6 +289,80 @@
             left: 0; 
         }
 
+
+
+        /* ===== About Me 안 요약 카드: Skills & Awards ===== */
+        .about-summary-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-top: 24px;
+        }
+
+        .about-mini-card {
+            background: #fcfcfd;
+            border: 1px solid #eaecf0;
+            border-radius: 18px;
+            padding: 20px;
+        }
+
+        .about-mini-card h3 {
+            font-size: 1rem;
+            font-weight: 900;
+            color: var(--midnight-navy);
+            margin-bottom: 14px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .about-skill-group {
+            margin-bottom: 12px;
+        }
+
+        .about-skill-group:last-child {
+            margin-bottom: 0;
+        }
+
+        .about-skill-group span {
+            display: block;
+            font-size: 0.78rem;
+            font-weight: 900;
+            color: var(--blue-accent);
+            margin-bottom: 4px;
+        }
+
+        .about-skill-group p {
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: #475467;
+            line-height: 1.45;
+            word-break: keep-all;
+        }
+
+        .about-award-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .about-award-list li {
+            display: flex;
+            gap: 8px;
+            align-items: flex-start;
+            font-size: 0.9rem;
+            font-weight: 800;
+            color: #344054;
+            line-height: 1.45;
+            word-break: keep-all;
+        }
+
+        .about-award-list li strong {
+            color: var(--midnight-navy);
+            font-weight: 900;
+        }
+
         .q-grid { 
             display: grid; 
             grid-template-columns: 1fr 1fr; 
@@ -598,6 +672,107 @@
             word-break: keep-all;
         }
 
+        .process-stage-keywords {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 18px;
+            padding-top: 16px;
+            border-top: 1px solid #eaecf0;
+        }
+
+        .process-stage-keywords span {
+            display: inline-block;
+            padding: 7px 10px;
+            border-radius: 999px;
+            background: var(--midnight-navy);
+            color: var(--point-yellow);
+            font-size: 0.76rem;
+            font-weight: 900;
+            line-height: 1.2;
+            word-break: keep-all;
+            white-space: nowrap;
+        }
+
+
+
+        /* ===== PPT 슬라이드별 Skills & Tools 박스 ===== */
+        .ppt-slide-skill-box {
+            width: 100%;
+            max-width: 780px;
+            margin-top: 24px;
+            padding: 16px 18px;
+            background: rgba(255, 255, 255, 0.92);
+            border: 1px solid rgba(16,24,40,0.10);
+            border-radius: 20px;
+            box-shadow: 0 14px 32px rgba(16,24,40,0.10);
+        }
+
+        .ppt-slide-skill-box strong {
+            display: block;
+            text-align: center;
+            font-size: 0.78rem;
+            font-weight: 900;
+            letter-spacing: 1.4px;
+            color: var(--blue-accent);
+            margin-bottom: 10px;
+        }
+
+        .ppt-slide-skill-items {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .ppt-slide-skill-items span {
+            display: inline-block;
+            padding: 7px 11px;
+            border-radius: 999px;
+            background: var(--midnight-navy);
+            color: var(--point-yellow);
+            font-size: 0.8rem;
+            font-weight: 900;
+            white-space: nowrap;
+            word-break: keep-all;
+        }
+
+        .header-skill-box {
+            margin-top: 16px;
+            padding: 14px 16px;
+            background: rgba(255,255,255,0.10);
+            border: 1px solid rgba(255,255,255,0.16);
+            border-radius: 18px;
+        }
+
+        .header-skill-box strong {
+            display: block;
+            font-size: 0.76rem;
+            font-weight: 900;
+            letter-spacing: 1.4px;
+            color: var(--point-yellow);
+            margin-bottom: 9px;
+        }
+
+        .header-skill-items {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .header-skill-items span {
+            display: inline-block;
+            padding: 7px 11px;
+            border-radius: 999px;
+            background: rgba(255,255,255,0.14);
+            border: 1px solid rgba(255,255,255,0.18);
+            color: #ffffff;
+            font-size: 0.78rem;
+            font-weight: 850;
+            white-space: nowrap;
+            word-break: keep-all;
+        }
+
         .process-role-tags {
             display: flex;
             flex-wrap: wrap;
@@ -617,6 +792,10 @@
             padding: 10px 15px;
             font-size: 0.88rem;
             font-weight: 800;
+        }
+
+        .process-role-tags:empty {
+            display: none;
         }
 
         .process-visual-scroll {
@@ -1432,6 +1611,43 @@
 
 
 
+
+
+        /* 프로젝트별 Skill & Tool 배지 */
+        .project-skill-tools {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 9px;
+            margin: 16px 0 24px;
+            padding: 18px 20px;
+            background: #f9fafb;
+            border: 1px solid #eaecf0;
+            border-radius: 18px;
+        }
+
+        .project-skill-tools strong {
+            width: 100%;
+            display: block;
+            font-size: 0.86rem;
+            color: var(--blue-accent);
+            font-weight: 900;
+            letter-spacing: 0.8px;
+            margin-bottom: 2px;
+        }
+
+        .project-skill-tools span {
+            display: inline-block;
+            padding: 8px 12px;
+            border-radius: 999px;
+            background: white;
+            border: 1px solid #d0d5dd;
+            color: var(--midnight-navy);
+            font-size: 0.86rem;
+            font-weight: 850;
+            word-break: keep-all;
+        }
+
+
         /* 프로젝트별 수상 배지 */
         .project-award-badges {
             display: flex;
@@ -1498,6 +1714,16 @@
             }
 
             .q-grid { grid-template-columns: 1fr 1fr; }
+
+            .about-summary-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .ppt-slide-skill-box {
+                max-width: 100%;
+                padding: 14px 12px;
+            }
+
 
             .ppt-container {
                 width: 100%;
@@ -1570,122 +1796,87 @@
     
 
         /* =========================================================
-           Fresh Balanced Portfolio Theme Override
-           - 기존 HTML/JS 구조 유지
-           - 밝고 상큼하지만 과하지 않은 대학생 포트폴리오 톤
-        ========================================================= */
+           Fresh but Portfolio-like Tone Override
+           기존 HTML/JS/기능 건드리지 않고 시각 톤만 조정
+           ========================================================= */
         :root {
-            --point-yellow: #f6c945;
+            --point-yellow: #facc15;
             --midnight-navy: #14213d;
             --soft-gray-bg: #f4fbff;
             --text-main: #1f2937;
-            --card-border: #dcecf6;
-            --blue-accent: #2f80ed;
-            --fresh-sky: #dff5ff;
-            --fresh-mint: #dffbf1;
-            --fresh-cream: #fff8dc;
-            --fresh-coral: #fff0ea;
-            --soft-shadow: 0 18px 45px rgba(37, 99, 235, 0.08);
-            --deep-shadow: 0 24px 60px rgba(20, 33, 61, 0.16);
+            --card-border: #dbeafe;
+            --blue-accent: #2563eb;
+            --concept-bold: 900;
+            --fresh-shadow: 0 18px 45px rgba(37, 99, 235, 0.10);
         }
 
         body {
             background:
-                radial-gradient(circle at 8% 8%, rgba(125, 211, 252, 0.28), transparent 28%),
-                radial-gradient(circle at 92% 14%, rgba(250, 204, 21, 0.18), transparent 25%),
-                linear-gradient(180deg, #f6fcff 0%, #f9fafb 45%, #ffffff 100%);
-        }
-
-        #main-content {
-            max-width: 1200px;
+                radial-gradient(circle at 8% 4%, rgba(224, 242, 254, 0.95), transparent 28%),
+                radial-gradient(circle at 92% 12%, rgba(250, 204, 21, 0.16), transparent 26%),
+                linear-gradient(180deg, #f8fcff 0%, #f4fbff 52%, #ffffff 100%);
         }
 
         #intro-overlay {
             background:
-                radial-gradient(circle at 50% 28%, rgba(246, 201, 69, 0.24), transparent 32%),
-                linear-gradient(135deg, #14213d 0%, #1f3b73 58%, #2f80ed 100%);
+                radial-gradient(circle at 50% 30%, rgba(250, 204, 21, 0.20), transparent 26%),
+                linear-gradient(135deg, #14213d 0%, #1d4ed8 100%);
         }
 
         #big-q {
-            color: #ffdf5d;
-            text-shadow: 0 12px 40px rgba(250, 204, 21, 0.35);
-            animation: introFloat 2.8s ease-in-out infinite;
+            color: #facc15;
+            text-shadow: 0 12px 35px rgba(250, 204, 21, 0.35);
         }
 
-        @keyframes introFloat {
-            0%, 100% { transform: translateY(0) rotate(-2deg); }
-            50% { transform: translateY(-10px) rotate(2deg); }
-        }
+        #main-content { max-width: 1200px; }
 
         header {
+            background:
+                radial-gradient(circle at 85% 10%, rgba(250, 204, 21, 0.24), transparent 28%),
+                linear-gradient(135deg, #14213d 0%, #1e3a8a 58%, #2563eb 100%);
+            border-top: 0;
+            border-radius: 0 0 38px 38px;
+            box-shadow: 0 26px 60px rgba(30, 64, 175, 0.18);
             position: relative;
             overflow: hidden;
-            background:
-                radial-gradient(circle at 92% 18%, rgba(246, 201, 69, 0.35), transparent 27%),
-                linear-gradient(135deg, #14213d 0%, #1c3f76 60%, #2f80ed 100%);
-            border-top: none;
-            border-radius: 0 0 46px 46px;
-            box-shadow: var(--deep-shadow);
-        }
-
-        header::before {
-            content: "";
-            position: absolute;
-            top: 26px;
-            right: 34px;
-            width: 160px;
-            height: 160px;
-            border-radius: 50%;
-            border: 2px solid rgba(255,255,255,0.18);
         }
 
         header::after {
-            content: "? → .";
+            content: "";
             position: absolute;
-            right: 56px;
-            bottom: 22px;
-            font-size: 3rem;
-            font-weight: 900;
-            color: rgba(255,255,255,0.08);
-            letter-spacing: 4px;
+            right: -70px;
+            bottom: -95px;
+            width: 260px;
+            height: 260px;
+            border-radius: 50%;
+            background: rgba(250, 204, 21, 0.18);
+            pointer-events: none;
         }
 
         .profile-img-container {
-            border: 5px solid rgba(255,255,255,0.55);
-            box-shadow: 0 16px 36px rgba(0,0,0,0.22);
+            border: 5px solid rgba(255, 255, 255, 0.72);
+            box-shadow: 0 18px 36px rgba(15, 23, 42, 0.24);
+            position: relative;
+            z-index: 1;
         }
+
+        .header-content { position: relative; z-index: 1; }
 
         .header-content .tagline {
             display: inline-block;
-            color: #14213d;
-            background: #ffdf5d;
+            background: rgba(255,255,255,0.14);
+            border: 1px solid rgba(255,255,255,0.18);
+            color: #fef9c3;
             padding: 8px 14px;
             border-radius: 999px;
             font-size: 1rem;
-            letter-spacing: 0.2px;
-            box-shadow: 0 10px 24px rgba(0,0,0,0.12);
+            margin-bottom: 16px;
         }
 
-        .header-content h1 {
-            font-size: 3.15rem;
-            letter-spacing: -1.3px;
-        }
+        .header-content h1 { letter-spacing: -1px; }
+        .header-content .mission { color: rgba(255,255,255,0.92); }
 
-        .header-content .mission {
-            color: rgba(255,255,255,0.92);
-            font-size: 1.35rem;
-        }
-
-        h2 {
-            color: #14213d;
-            letter-spacing: -0.5px;
-        }
-
-        h2::before {
-            width: 10px;
-            height: 32px;
-            background: linear-gradient(180deg, #2f80ed 0%, #f6c945 100%);
-        }
+        h2::before { background: linear-gradient(180deg, #facc15 0%, #38bdf8 100%); }
 
         .card,
         .direction-card,
@@ -1694,250 +1885,209 @@
         .slide-files-box,
         .about-mini-card,
         .info-item {
-            border-color: var(--card-border);
-            box-shadow: var(--soft-shadow);
+            border-color: #dbeafe;
+            box-shadow: var(--fresh-shadow);
         }
 
         .card {
-            background: rgba(255,255,255,0.88);
+            background: rgba(255,255,255,0.94);
             backdrop-filter: blur(10px);
         }
 
         .about-reveal-box {
             background:
-                linear-gradient(135deg, #ffffff 0%, #f0fbff 60%, #fff8dc 100%);
-            border: 2px dashed rgba(47, 128, 237, 0.22);
-            box-shadow: 0 16px 36px rgba(47,128,237,0.07);
+                radial-gradient(circle at 50% 0%, rgba(250, 204, 21, 0.18), transparent 34%),
+                linear-gradient(135deg, #ffffff 0%, #eff6ff 100%);
+            border: 1.5px dashed #93c5fd;
         }
 
         .about-reveal-box:hover {
-            border-color: #2f80ed;
-            transform: translateY(-5px) rotate(-0.4deg);
+            border-color: #facc15;
+            box-shadow: 0 18px 34px rgba(37,99,235,0.14);
         }
 
         .about-reveal-q {
-            color: #f6c945;
-            text-shadow: 2px 2px 0 #14213d, 0 10px 28px rgba(246,201,69,0.28);
-        }
-
-        .info-item {
-            background: #ffffff;
-        }
-
-        .info-item span,
-        .about-skill-group span,
-        .direction-item span,
-        .process-stage-card span,
-        .framework-card-header span,
-        .feature-group-card span,
-        .research-card-header span,
-        .kleague-framework-header span,
-        .project-skill-tools strong {
-            color: #2f80ed;
-        }
-
-        .about-mini-card:nth-child(1) {
-            background: linear-gradient(135deg, #ffffff 0%, #eefaff 100%);
-        }
-
-        .about-mini-card:nth-child(2) {
-            background: linear-gradient(135deg, #ffffff 0%, #fff8dc 100%);
+            color: #facc15;
+            text-shadow: 2px 2px 0 #14213d, 0 10px 20px rgba(250,204,21,0.22);
         }
 
         .q-item {
-            position: relative;
-            overflow: hidden;
-            background: linear-gradient(135deg, #14213d 0%, #1f3b73 100%);
-            border: 1px solid rgba(47, 128, 237, 0.18);
-            box-shadow: 0 16px 38px rgba(20,33,61,0.15);
+            background:
+                radial-gradient(circle at 85% 12%, rgba(250,204,21,0.20), transparent 26%),
+                linear-gradient(135deg, #14213d 0%, #1d4ed8 100%);
+            border: 1px solid rgba(255,255,255,0.18);
+            box-shadow: 0 18px 36px rgba(30, 64, 175, 0.16);
         }
-
-        .q-item::after {
-            content: "";
-            position: absolute;
-            width: 110px;
-            height: 110px;
-            border-radius: 50%;
-            right: -34px;
-            top: -34px;
-            background: rgba(246,201,69,0.18);
-        }
-
-        .q-item:nth-child(2)::after { background: rgba(125,211,252,0.22); }
-        .q-item:nth-child(3)::after { background: rgba(45,212,191,0.18); }
-        .q-item:nth-child(4)::after { background: rgba(255,183,77,0.20); }
 
         .q-item:hover {
-            background: linear-gradient(135deg, #1c3f76 0%, #2f80ed 100%);
-            transform: translateY(-7px);
-            border-color: rgba(246,201,69,0.8);
-            box-shadow: 0 24px 48px rgba(47,128,237,0.22);
+            background:
+                radial-gradient(circle at 85% 12%, rgba(250,204,21,0.30), transparent 26%),
+                linear-gradient(135deg, #1d4ed8 0%, #2563eb 100%);
+            transform: translateY(-6px) rotate(-0.4deg);
+            border-color: rgba(250,204,21,0.70);
         }
 
         .q-mark-small {
-            color: #ffdf5d;
-            text-shadow: 0 8px 24px rgba(246,201,69,0.28);
+            color: #facc15;
+            text-shadow: 0 10px 22px rgba(250,204,21,0.28);
         }
 
         .direction-card {
             background:
-                radial-gradient(circle at 92% 8%, rgba(125, 211, 252, 0.22), transparent 24%),
-                linear-gradient(135deg, #ffffff 0%, #f5fcff 100%);
-            border-color: #dcecf6;
+                radial-gradient(circle at 92% 8%, rgba(224,242,254,0.95), transparent 30%),
+                linear-gradient(135deg, #ffffff 0%, #f8fcff 100%);
         }
 
-        .direction-card::before {
-            background: linear-gradient(90deg, #2f80ed 0%, #7dd3fc 45%, #f6c945 100%);
-        }
-
-        .direction-highlight {
-            background: linear-gradient(to top, rgba(125,211,252,0.38) 45%, transparent 45%);
-        }
+        .direction-card::before { background: linear-gradient(90deg, #facc15 0%, #38bdf8 52%, #86efac 100%); }
 
         .direction-item {
-            background: #ffffff;
-            box-shadow: 0 12px 26px rgba(20,33,61,0.05);
+            border-color: #dbeafe;
+            box-shadow: 0 12px 24px rgba(37,99,235,0.06);
         }
+
+        .direction-item span,
+        .about-skill-group span,
+        .project-skill-tools strong,
+        .framework-card-header span,
+        .research-card-header span,
+        .kleague-framework-header span,
+        .ppt-slide-skill-box strong {
+            color: #2563eb;
+        }
+
+        .direction-highlight { background: linear-gradient(to top, rgba(125, 211, 252, 0.42) 45%, transparent 45%); }
+
+        .project-award-badges span {
+            background: #fff7c2;
+            border-color: rgba(250,204,21,0.85);
+            box-shadow: 0 8px 18px rgba(250,204,21,0.16);
+        }
+
+        .project-skill-tools {
+            background: linear-gradient(135deg, #f8fcff 0%, #eff6ff 100%);
+            border-color: #bfdbfe;
+        }
+
+        .project-skill-tools span {
+            border-color: #bfdbfe;
+            background: #ffffff;
+            color: #14213d;
+        }
+
+        .file-button {
+            background: linear-gradient(135deg, #14213d 0%, #2563eb 100%);
+            box-shadow: 0 12px 24px rgba(37,99,235,0.16);
+        }
+
+        .file-button:hover { background: linear-gradient(135deg, #1d4ed8 0%, #2563eb 100%); }
 
         #ppt-overlay {
             background:
-                radial-gradient(circle at 20% 12%, rgba(125,211,252,0.36), transparent 28%),
-                radial-gradient(circle at 88% 8%, rgba(246,201,69,0.26), transparent 24%),
-                linear-gradient(135deg, #eaf8ff 0%, #f7fbff 45%, #fff8dc 100%);
+                radial-gradient(circle at 12% 6%, rgba(224,242,254,0.9), transparent 30%),
+                radial-gradient(circle at 90% 10%, rgba(250,204,21,0.20), transparent 28%),
+                linear-gradient(135deg, #edf7ff 0%, #f8fcff 46%, #fffdf2 100%);
+            color: #14213d;
         }
 
         #ppt-nav {
-            background: rgba(255,255,255,0.86);
-            border: 1px solid rgba(47,128,237,0.14);
-            box-shadow: 0 14px 34px rgba(20,33,61,0.12);
+            background: rgba(20, 33, 61, 0.92);
+            border-color: rgba(255,255,255,0.40);
+            box-shadow: 0 16px 36px rgba(37,99,235,0.18);
         }
 
-        .nav-btn {
-            color: #14213d;
-        }
-
-        .nav-btn.active {
-            color: #2f80ed;
-            text-shadow: 0 8px 22px rgba(47,128,237,0.18);
-        }
-
-        #ppt-close-btn {
-            color: #14213d;
-            opacity: 0.62;
-        }
+        .nav-btn { color: white; }
+        .nav-btn.active { color: #facc15; }
 
         .question-slide-inner::before {
             background:
-                radial-gradient(circle at 50% 5%, rgba(125,211,252,0.20), transparent 35%),
-                linear-gradient(135deg, #ffffff 0%, #f8fdff 58%, #fff8dc 100%);
-            border: 1px solid rgba(47,128,237,0.12);
-            box-shadow: 0 30px 70px rgba(20,33,61,0.16);
+                radial-gradient(circle at 50% 4%, rgba(250,204,21,0.18), transparent 32%),
+                radial-gradient(circle at 12% 92%, rgba(186,230,253,0.60), transparent 28%),
+                linear-gradient(135deg, #ffffff 0%, #f8fcff 60%, #fffbea 100%);
+            border-color: #bfdbfe;
+            box-shadow: 0 28px 70px rgba(37,99,235,0.18);
         }
 
         .slide-q-huge {
-            color: #f6c945;
-            text-shadow: 4px 4px 0 #14213d, 0 18px 50px rgba(246,201,69,0.36);
+            color: #facc15;
+            text-shadow: 4px 4px 0 #14213d, 0 18px 50px rgba(250,204,21,0.28);
         }
 
         .slide-q-keywords span,
         .ppt-slide-skill-items span,
         .process-stage-keywords span {
             background: #14213d;
-            color: #ffdf5d;
+            color: #facc15;
         }
 
         .ppt-slide-skill-box {
-            background: rgba(255,255,255,0.96);
-            border: 1px solid rgba(47,128,237,0.16);
-            box-shadow: 0 16px 34px rgba(47,128,237,0.10);
+            background: rgba(255,255,255,0.95);
+            border-color: #bfdbfe;
+            box-shadow: 0 16px 34px rgba(37,99,235,0.12);
         }
 
         .process-concept-header,
         .result-concept-header {
             background:
-                radial-gradient(circle at 92% 18%, rgba(246,201,69,0.26), transparent 25%),
-                linear-gradient(135deg, #14213d 0%, #1f3b73 100%);
-            border-left-color: #7dd3fc;
-            box-shadow: 0 22px 48px rgba(20,33,61,0.18);
+                radial-gradient(circle at 92% 10%, rgba(250,204,21,0.20), transparent 26%),
+                linear-gradient(135deg, #14213d 0%, #1d4ed8 100%);
+            border-left-color: #facc15;
+            box-shadow: 0 18px 44px rgba(30,64,175,0.18);
+        }
+
+        .header-skill-box {
+            background: rgba(255,255,255,0.12);
+            border-color: rgba(255,255,255,0.22);
         }
 
         .process-scroll-card,
         #ppt-result-view .project-card {
-            box-shadow: 0 24px 58px rgba(20,33,61,0.13);
-            border: 1px solid rgba(47,128,237,0.10);
+            box-shadow: 0 18px 44px rgba(37,99,235,0.12);
+            border-color: #dbeafe;
         }
 
-        .process-stage-card,
+        .process-stage-card {
+            background: linear-gradient(180deg, #ffffff 0%, #f8fcff 100%);
+            border-color: #dbeafe;
+            box-shadow: 0 12px 24px rgba(37,99,235,0.07);
+        }
+
+        .process-stage-card::before { background: linear-gradient(90deg, #facc15 0%, #38bdf8 100%); }
+
+        .process-visual-scroll { background: #eef7ff; }
+
         .framework-design-card,
         .research-process-card,
         .kleague-framework-card,
+        .process-image-card,
         .slide-image-card {
-            background: #ffffff;
-            border-color: #dcecf6;
-            box-shadow: 0 14px 30px rgba(20,33,61,0.06);
-        }
-
-        .process-stage-card::before {
-            background: linear-gradient(90deg, #2f80ed 0%, #7dd3fc 55%, #f6c945 100%);
-        }
-
-        .process-visual-scroll {
-            background: linear-gradient(135deg, #eefaff 0%, #f9fafb 100%);
+            border-color: #dbeafe;
+            box-shadow: 0 10px 24px rgba(37,99,235,0.07);
         }
 
         .pipeline-step,
-        .kleague-final-box,
-        .file-button,
-        .role-badge {
-            background: #14213d;
-        }
-
-        .project-award-badges span {
-            background: #fff7c8;
-            border-color: rgba(246,201,69,0.76);
-        }
-
-        .project-skill-tools {
-            background: linear-gradient(135deg, #f5fcff 0%, #ffffff 100%);
-            border-color: #dcecf6;
-        }
-
-        .project-skill-tools span {
-            background: #ffffff;
-            border-color: rgba(47,128,237,0.16);
-            box-shadow: 0 6px 14px rgba(47,128,237,0.06);
-        }
+        .kleague-final-box { background: linear-gradient(135deg, #14213d 0%, #1d4ed8 100%); }
 
         .ppt-side-btn {
-            background: #ffffff;
-            color: #14213d;
-            border-color: rgba(47,128,237,0.18);
-            box-shadow: 0 14px 34px rgba(20,33,61,0.14);
+            background: rgba(20,33,61,0.92);
+            color: #facc15;
+            border-color: rgba(37,99,235,0.18);
         }
 
         .ppt-side-btn:hover {
-            background: #2f80ed;
-            color: #ffffff;
+            background: #facc15;
+            color: #14213d;
         }
 
-        .ppt-side-btn:disabled {
-            background: rgba(255,255,255,0.72);
-            color: rgba(20,33,61,0.34);
+        #ppt-close-btn {
+            color: #14213d;
+            opacity: 0.55;
         }
+
+        #ppt-close-btn:hover { opacity: 1; }
 
         #ppt-step-label {
-            background: rgba(20,33,61,0.88);
-            color: #ffffff;
-            border-color: rgba(255,255,255,0.28);
-        }
-
-        footer {
-            color: #667085;
-        }
-
-        @media (max-width: 1000px) {
-            header::after { display: none; }
-            .header-content h1 { font-size: 2.55rem; }
+            background: rgba(20,33,61,0.92);
+            color: white;
         }
 
     </style>
@@ -1988,6 +2138,34 @@
                         <li>전남대학교 SanmanTEC AI창업동아리 회장(2025.04 ~ 2026.08)</li>
                         <li>전남대학교 빅데이터융합학과 학생회 사무부장(2021.04 ~ 2022.02)</li>
                     </ul>
+
+                    <div class="about-summary-grid">
+                        <div class="about-mini-card">
+                            <h3>Skills & Tools</h3>
+                            <div class="about-skill-group">
+                                <span>Data Analysis</span>
+                                <p>Python · R · SQL · SAS</p>
+                            </div>
+                            <div class="about-skill-group">
+                                <span>Data Experience</span>
+                                <p>NHIS · KNHANES</p>
+                            </div>
+                            <div class="about-skill-group">
+                                <span>PM Tools</span>
+                                <p>Notion · Google Docs · GitHub · Figma</p>
+                            </div>
+                        </div>
+
+                        <div class="about-mini-card">
+                            <h3>Honors & Awards</h3>
+                            <ul class="about-award-list">
+                                <li><span>🏆</span><strong>호남지방통계청 통계분석 경진대회 최우수상</strong></li>
+                                <li><span>🏆</span><strong>J-Curve Startup 부트캠프 최우수상</strong></li>
+                                <li><span>🏆</span><strong>AICOSS 산학협력프로젝트 경진대회 동상</strong></li>
+                            </ul>
+                        </div>
+                    </div>
+
                     <button class="value-btn" style="background:var(--midnight-navy); color:#fff; border:none; padding:15px; border-radius:14px; width:100%; margin-top:20px; font-weight:800; cursor:pointer;" onclick="toggleValue()">가치관 확인하기</button>
                     <div id="value-text" style="display:none; margin-top:20px; padding:25px; background:#f9fafb; border-left:5px solid var(--point-yellow); font-size:1rem; line-height:1.8; color: #344054;">
                        저에게 물음표는 사용자의 불편함과 문제상황을 인식하는 출발점입니다. 아이디어는 막연한 상상에서 시작되는 것이 아니라, 사람들이 반복적으로 겪는 불편을 발견하는 순간부터 시작된다고 생각합니다. 저는 그 물음표를 데이터로 확인하고, 문제의 크기와 우선순위를 판단해야한다고 생각합니다. 그리고 분석 결과를 사용자 경험, 서비스 흐름, 실행 전략으로 구체화해 하나의 마침표로 완성하는 기획자를 지향합니다.
@@ -2086,6 +2264,13 @@
                 <span>🏆 J-Curve Startup 부트캠프 최우수상</span>
                 <span>🏆 AICOSS 산학협력프로젝트 경진대회 동상</span>
             </div>
+            <div class="project-skill-tools">
+                <strong>SKILLS & TOOLS</strong>
+                <span>Figma</span>
+                <span>GitHub</span>
+                <span>Google Docs</span>
+                <span>Notion</span>
+            </div>
             <ul class="project-details">
                 <li><strong>비즈니스 모델:</strong> 비수탁형(Non-custodial) 모델을 활용한 보안 기반 암호화폐 상속 서비스 기획</li>
                 <li><strong>서비스 설계:</strong> 중앙화 거래소 리스크와 개인키 분실 문제를 정의하고, 피상속인-상속인-관리자 흐름 설계</li>
@@ -2125,6 +2310,13 @@
             <div class="project-award-badges">
                 <span>🏆 호남지방통계청 통계분석 경진대회 최우수상</span>
             </div>
+            <div class="project-skill-tools">
+                <strong>SKILLS & TOOLS</strong>
+                <span>Python</span>
+                <span>SAS</span>
+                <span>R</span>
+                <span>국민건강영양조사 데이터</span>
+            </div>
             <ul class="project-details">
                 <li><strong>데이터 활용:</strong> 국민건강영양조사(KNHANES) 데이터를 활용해 정신 건강, 신체 건강, 건강 행동 분석</li>
                 <li><strong>분석 설계:</strong> 건강 관련 컬럼을 주요 기준으로 분류하고, 유형화와 해석이 가능한 분석 프레임워크 구성</li>
@@ -2158,6 +2350,12 @@
             <span class="role-badge">Undergraduate Researcher</span>
             <h3 class="project-title">청소년 ECLS 환자의 신경합병증 발생 요인 분석 <span class="mark">.</span></h3>
             <p class="project-subtitle">"건강보험공단 대규모 데이터(NHIS)를 활용한 의생명정보학 연구 분석"</p>
+            <div class="project-skill-tools">
+                <strong>SKILLS & TOOLS</strong>
+                <span>SAS</span>
+                <span>SQL</span>
+                <span>NHIS 데이터</span>
+            </div>
             <ul class="project-details">
                 <li><strong>데이터 기반:</strong> NHIS 자료를 활용해 18세 이하 ECLS 환자 코호트를 구성하고 신경합병증 발생군 정의</li>
                 <li><strong>분석 내용:</strong> 생존자·사망자 그룹별 기초통계와 Early/Late 신경합병증 발생 특성 비교</li>
@@ -2190,6 +2388,11 @@
             <span class="role-badge">Data Planner</span>
             <h3 class="project-title">K리그 팬 여론과 경기력의 상관 구조 분석 <span class="mark">.</span></h3>
             <p class="project-subtitle">"유튜브 댓글 데이터와 경기력 지표를 결합한 스포츠 소셜 데이터 분석"</p>
+            <div class="project-skill-tools">
+                <strong>SKILLS & TOOLS</strong>
+                <span>Python</span>
+                <span>Google Docs</span>
+            </div>
             <ul class="project-details">
                 <li><strong>데이터 수집:</strong> K리그 유튜브 하이라이트 댓글과 공식 경기력 데이터 수집</li>
                 <li><strong>분석 방법:</strong> BERTopic 기반 토픽 모델링, LLM 기반 감정점수화, PCA 기반 경기력 지표 축소</li>
@@ -2236,6 +2439,7 @@
                     <div class="slide-q-title" id="ppt-main-title">질문 내용</div>
                     <p class="slide-q-description" id="ppt-question-description">질문에 대한 설명이 들어갑니다.</p>
                     <div class="slide-q-keywords" id="ppt-question-keywords"></div>
+                    <div class="ppt-slide-skill-box" id="ppt-question-skills"></div>
                 </div>
             </div>
 
@@ -2245,6 +2449,7 @@
                         <span class="process-small-label">MY PROCESS</span>
                         <h3>나의 실행 화살표 <span>→</span></h3>
                         <p id="process-concept-text">물음표로 시작한 문제를 실행 과정으로 연결했습니다.</p>
+                        <div class="header-skill-box" id="ppt-process-skills"></div>
                     </div>
 
                     <div class="process-scroll-card">
@@ -2261,6 +2466,7 @@
                         <span class="result-small-label">MY RESULT</span>
                         <h3>나의 결과 마침표 <span>.</span></h3>
                         <p id="result-concept-text">물음표로 시작한 질문을 실행 가능한 결과로 정리했습니다.</p>
+                        <div class="header-skill-box" id="ppt-result-skills"></div>
                     </div>
 
                     <div id="ppt-result-view"></div>
@@ -2319,23 +2525,27 @@
                 q: "디지털 자산, 사후 상속은?",
                 questionDescription: "중앙화 거래소에 자산을 맡기면 해킹, 출금 제한, 파산과 같은 리스크가 있고, 비수탁 지갑은 개인키를 잃으면 자산을 되찾기 어렵습니다. 중앙화 리스크와 개인키 분실 리스크를 동시에 줄이면서, 사후에도 디지털 자산을 안전하게 넘길 수 있는 구조를 만들 수 있을까라는 질문에서 시작했습니다.",
                 questionKeywords: ["중앙화 거래소 리스크", "비수탁 지갑", "개인키 분실", "디지털 자산 상속", "스마트컨트랙트"],
+                skills: ["Figma", "GitHub", "Google Docs", "Notion"],
                 processText: "“디지털 자산, 사후 상속은?”이라는 물음표를 수상 아이디어 → SanmanTEC 구현 → 수상 및 IR Pitching 검증 경험으로 연결했습니다.",
                 resultText: "“디지털 자산, 사후 상속은?”이라는 물음표를 암호화폐 상속 서비스 기획, MVP 구현, 수상 및 IR Pitching 경험으로 마침표 찍었습니다.",
                 stages: [
                     {
                         label: "01 IDEA",
                         title: "아이디어 제안 및 수상",
-                        desc: "J-Curve Startup 부트캠프에서 암호화폐 상속 서비스 아이디어를 제안하고 최우수상을 수상했습니다."
+                        desc: "J-Curve Startup 부트캠프에서 암호화폐 상속 서비스 아이디어를 제안하고 최우수상을 수상했습니다.",
+                        keywords: ["아이디어 제안", "J-Curve 최우수상"]
                     },
                     {
                         label: "02 BUILD",
                         title: "SanmanTEC 프로젝트화",
-                        desc: "수상 아이디어를 창업동아리 SanmanTEC에 가져와 MVP 구현을 시작하고, 서비스 흐름과 시스템 구조를 구체화했습니다."
+                        desc: "수상 아이디어를 창업동아리 SanmanTEC에 가져와 MVP 구현을 시작하고, 서비스 흐름과 시스템 구조를 구체화했습니다.",
+                        keywords: ["서비스 기획", "Figma UI/UX", "유스케이스 작성"]
                     },
                     {
                         label: "03 VALIDATION",
                         title: "수상 및 창업지원사업 검증",
-                        desc: "J-Curve Startup 부트캠프 최우수상과 AICOSS 산학협력프로젝트 경진대회 동상을 수상하며 아이디어와 구현 가능성을 외부에서 검증받았습니다. 이후 창업지원사업 서류 평가를 통과하고 IR Pitching 과정에서 시장성, 법적 리스크, 구현 가능성에 대한 피드백을 받았습니다."
+                        desc: "J-Curve Startup 부트캠프 최우수상과 AICOSS 산학협력프로젝트 경진대회 동상을 수상하며 아이디어와 구현 가능성을 외부에서 검증받았습니다. 이후 창업지원사업 서류 평가를 통과하고 IR Pitching 과정에서 시장성, 법적 리스크, 구현 가능성에 대한 피드백을 받았습니다.",
+                        keywords: ["AICOSS 동상", "법률 멘토링 반영", "IR Pitching 준비"]
                     }
                 ],
                 tags: ["아이디어 제안", "서비스 기획", "J-Curve 최우수상", "AICOSS 동상", "Figma UI/UX", "유스케이스 작성", "법률 멘토링 반영", "IR Pitching 준비"],
@@ -2349,6 +2559,7 @@
                 q: "국민 건강, 유형화될까?",
                 questionDescription: "국민건강영양조사에는 사람들의 건강 상태와 생활습관이 담긴 대규모 데이터가 있습니다. 이 데이터를 단순 통계로 보는 데서 그치지 않고, 건강 특성을 유형화하기 위해 어떤 데이터 프레임워크를 설계해야 할지, 그리고 유형별 맞춤형 생활습관 관리 방향을 제안할 수 있을지 고민했습니다.",
                 questionKeywords: ["KNHANES", "건강 유형화", "피처 분류", "K-Means", "맞춤형 생활습관"],
+                skills: ["Python", "SAS", "R", "국민건강영양조사 데이터"],
                 processText: "“국민 건강, 유형화될까?”라는 물음표를 대규모 공공데이터 분석 설계 → 건강 유형화 → 통계분석 경진대회 최우수상 성과로 연결했습니다.",
                 resultText: "“국민 건강, 유형화될까?”라는 물음표를 건강 유형화 분석, 맞춤형 관리 전략, 통계분석 경진대회 최우수상으로 마침표 찍었습니다.",
                 customProcessVisual: "healthDataframe",
@@ -2356,17 +2567,20 @@
                     {
                         label: "01 IDEA",
                         title: "대규모 건강데이터 활용 아이디어 제안",
-                        desc: "국민건강영양조사는 국민의 건강 상태와 생활습관이 담긴 대규모 공공데이터이기 때문에, 이를 활용해 사람들의 건강 특성을 유형화해보자는 아이디어를 제안했습니다."
+                        desc: "국민건강영양조사는 국민의 건강 상태와 생활습관이 담긴 대규모 공공데이터이기 때문에, 이를 활용해 사람들의 건강 특성을 유형화해보자는 아이디어를 제안했습니다.",
+                        keywords: ["아이디어 제안", "공공데이터 분석"]
                     },
                     {
                         label: "02 FRAMEWORK",
                         title: "건강 지표 기준 분류 및 분석 설계",
-                        desc: "정신 건강, 신체 건강, 건강 행동 등 주요 기준으로 컬럼을 분류하고, 각 기준에 해당하는 변수들을 활용해 클러스터링을 수행하는 분석 프레임워크를 설계했습니다."
+                        desc: "정신 건강, 신체 건강, 건강 행동 등 주요 기준으로 컬럼을 분류하고, 각 기준에 해당하는 변수들을 활용해 클러스터링을 수행하는 분석 프레임워크를 설계했습니다.",
+                        keywords: ["컬럼·피처 기준 분류", "분석 프레임워크 설계", "K-Means 클러스터링"]
                     },
                     {
                         label: "03 RESULT",
                         title: "건강 유형 도출 및 외부 성과",
-                        desc: "클러스터링과 회귀분석을 통해 건강 유형별 부족한 요인과 관리 방향을 도출했습니다. 해당 분석 결과는 호남지방통계청 통계분석 경진대회에서 최우수상을 수상하며 분석의 완성도와 활용 가능성을 인정받았습니다."
+                        desc: "클러스터링과 회귀분석을 통해 건강 유형별 부족한 요인과 관리 방향을 도출했습니다. 해당 분석 결과는 호남지방통계청 통계분석 경진대회에서 최우수상을 수상하며 분석의 완성도와 활용 가능성을 인정받았습니다.",
+                        keywords: ["회귀분석", "통계분석 경진대회 발표"]
                     }
                 ],
                 tags: ["아이디어 제안", "공공데이터 분석", "컬럼·피처 기준 분류", "분석 프레임워크 설계", "K-Means 클러스터링", "회귀분석", "통계분석 경진대회 발표"],
@@ -2376,6 +2590,7 @@
                 q: "청소년 합병증, 예측 가능할까?",
                 questionDescription: "ECLS를 시행한 청소년 환자에게 신경합병증은 왜 발생할까? 시행 전 기저질환, 시행 당시 질병, 사망 위험과의 관련성을 NHIS 자료로 확인하고자 했습니다.",
                 questionKeywords: ["청소년 ECLS", "신경합병증", "기저질환", "사망 위험", "생존분석"],
+                skills: ["SAS", "SQL", "NHIS 데이터"],
                 processText: "“청소년 ECLS 환자의 신경합병증은 왜 발생할까?”라는 물음표를 연구 참여 → NHIS 코호트 구축 → 기초통계·생존분석 과정으로 연결했습니다.",
                 resultText: "“청소년 합병증, 예측 가능할까?”라는 물음표를 청소년 ECLS 환자의 신경합병증 발생 및 예후 분석 결과로 마침표 찍었습니다.",
                 customProcessVisual: "ecmoResearchFlow",
@@ -2383,17 +2598,20 @@
                     {
                         label: "01 RESEARCH",
                         title: "학부연구생 연구 주제 수행",
-                        desc: "의생명정보학 연구실 학부연구생으로 청소년 ECLS 환자의 신경합병증·예후 분석 연구에 참여했습니다."
+                        desc: "의생명정보학 연구실 학부연구생으로 청소년 ECLS 환자의 신경합병증·예후 분석 연구에 참여했습니다.",
+                        keywords: ["학부연구생", "SAS"]
                     },
                     {
                         label: "02 COHORT",
                         title: "NHIS 기반 분석 대상자 구축",
-                        desc: "건강보험공단 빅데이터실에서 NHIS 자료를 분석하고, 청소년 ECLS 환자 코호트를 구축했습니다."
+                        desc: "건강보험공단 빅데이터실에서 NHIS 자료를 분석하고, 청소년 ECLS 환자 코호트를 구축했습니다.",
+                        keywords: ["NHIS 데이터 분석", "코호트 구축", "발생군·미발생군 분류"]
                     },
                     {
                         label: "03 ANALYSIS",
                         title: "기초통계 및 생존분석 수행",
-                        desc: "신경합병증 발생 여부와 사망을 사건으로 설정해 기초통계와 생존분석을 수행했습니다."
+                        desc: "신경합병증 발생 여부와 사망을 사건으로 설정해 기초통계와 생존분석을 수행했습니다.",
+                        keywords: ["기초통계", "생존분석"]
                     }
                 ],
                 tags: ["학부연구생", "NHIS 데이터 분석", "코호트 구축", "발생군·미발생군 분류", "기초통계", "생존분석", "SAS"],
@@ -2407,6 +2625,7 @@
                 q: "K리그 여론, 경기력과 관계는?",
                 questionDescription: "팬들은 경기 후 댓글을 통해 팀에 대한 평가를 남깁니다. 이 댓글들이 단순 반응에 그치는지, 실제 경기력과 연결될 수 있는 의미 있는 데이터인지 확인하고 싶었습니다. 비정형 댓글 데이터를 수치화하고, 이를 정형 경기력 데이터와 비교할 수 있을까라는 질문에서 출발했습니다.",
                 questionKeywords: ["유튜브 댓글", "비정형 데이터", "팬 여론", "감정점수화", "PCA", "상관분석"],
+                skills: ["Python", "Google Docs"],
                 processText: "“K리그 팬들의 팀 평가는 실제 경기력과 관련이 있을까?”라는 물음표를 댓글 데이터 수집 → 팬 여론 수치화 → 경기력 지표 축소 → 상관분석 과정으로 연결했습니다.",
                 resultText: "“K리그 팬 여론은 실제 경기력과 관계가 있을까?”라는 물음표를 소셜 데이터와 경기력 데이터의 상관 구조 분석 결과로 마침표 찍었습니다.",
                 customProcessVisual: "kleagueFramework",
@@ -2414,17 +2633,20 @@
                     {
                         label: "01 QUESTION",
                         title: "팬 여론과 경기력 관계에 대한 의문 제시",
-                        desc: "K리그 팬들이 유튜브 댓글을 통해 표현하는 팀에 대한 평가가 실제 경기력 지표와 관련이 있을까라는 의문에서 프로젝트를 시작했습니다."
+                        desc: "K리그 팬들이 유튜브 댓글을 통해 표현하는 팀에 대한 평가가 실제 경기력 지표와 관련이 있을까라는 의문에서 프로젝트를 시작했습니다.",
+                        keywords: ["아이디어 제안", "발표 경험"]
                     },
                     {
                         label: "02 FRAMEWORK",
                         title: "댓글 데이터와 경기력 데이터 결합 설계",
-                        desc: "K리그 유튜브 하이라이트 댓글 데이터와 공식 경기력 데이터를 함께 수집하고, 팬 여론과 경기력 지표를 비교할 수 있는 데이터 분석 프레임워크를 설계했습니다."
+                        desc: "K리그 유튜브 하이라이트 댓글 데이터와 공식 경기력 데이터를 함께 수집하고, 팬 여론과 경기력 지표를 비교할 수 있는 데이터 분석 프레임워크를 설계했습니다.",
+                        keywords: ["데이터 프레임워크 설계", "BERTopic", "감정점수화"]
                     },
                     {
                         label: "03 ANALYSIS",
                         title: "여론 수치화 및 상관분석 수행",
-                        desc: "BERTopic으로 댓글 토픽을 군집화하고 감정점수를 부여해 팬 여론을 수치화했습니다. 이후 경기력 지표는 PCA로 축소한 뒤, 팬 여론 지표와 상관분석을 진행했습니다."
+                        desc: "BERTopic으로 댓글 토픽을 군집화하고 감정점수를 부여해 팬 여론을 수치화했습니다. 이후 경기력 지표는 PCA로 축소한 뒤, 팬 여론 지표와 상관분석을 진행했습니다.",
+                        keywords: ["PCA 분석", "상관분석", "포스터 발표"]
                     }
                 ],
                 tags: ["아이디어 제안", "데이터 프레임워크 설계", "발표 경험", "포스터 발표", "BERTopic", "감정점수화", "PCA 분석", "상관분석"],
@@ -2448,6 +2670,9 @@
             const tags = document.getElementById('ppt-process-tags');
             const processVisual = document.getElementById('ppt-process-visual');
             const resultView = document.getElementById('ppt-result-view');
+            const questionSkills = document.getElementById('ppt-question-skills');
+            const processSkills = document.getElementById('ppt-process-skills');
+            const resultSkills = document.getElementById('ppt-result-skills');
 
             const data = pptDataStore[idx];
 
@@ -2459,15 +2684,34 @@
             processText.innerText = data.processText;
             resultText.innerText = data.resultText;
 
+            const skillItemsHtml = data.skills
+                ? data.skills.map(skill => `<span>${skill}</span>`).join('')
+                : "";
+            const questionSkillHtml = skillItemsHtml
+                ? `<strong>SKILLS & TOOLS</strong><div class="ppt-slide-skill-items">${skillItemsHtml}</div>`
+                : "";
+            const headerSkillHtml = skillItemsHtml
+                ? `<strong>SKILLS & TOOLS</strong><div class="header-skill-items">${skillItemsHtml}</div>`
+                : "";
+
+            questionSkills.innerHTML = questionSkillHtml;
+            processSkills.innerHTML = headerSkillHtml;
+            resultSkills.innerHTML = headerSkillHtml;
+
             stages.innerHTML = data.stages.map(stage => `
                 <div class="process-stage-card">
                     <span>${stage.label}</span>
                     <h4>${stage.title}</h4>
                     <p>${stage.desc}</p>
+                    ${stage.keywords && stage.keywords.length ? `
+                        <div class="process-stage-keywords">
+                            ${stage.keywords.map(keyword => `<span>${keyword}</span>`).join('')}
+                        </div>
+                    ` : ''}
                 </div>
             `).join('');
 
-            tags.innerHTML = data.tags.map(tag => `<span>${tag}</span>`).join('');
+            tags.innerHTML = '';
 
             if (data.customProcessVisual === "healthDataframe") {
                 processVisual.innerHTML = `
